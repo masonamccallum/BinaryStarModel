@@ -16,7 +16,7 @@ of a prevalent type of star system.
 
 
 ### Moving forward
-- [X] Develop muli-GPU Simulation
+- [X] Develop multi-GPU Simulation
 - [ ] Develop Particle Simulation saving protocol
 - [ ] Refactor code for a more powerful machine
 - [ ] Develop Graphics engine for post processing
