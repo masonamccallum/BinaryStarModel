@@ -1,4 +1,4 @@
-### N-Body Simulation of Binary Star Mass Transfer
+## N-Body Simulation of Binary Star Mass Transfer
 
 <img src="/logo.jpg" width="200" />
 
