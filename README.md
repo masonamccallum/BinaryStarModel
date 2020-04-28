@@ -14,8 +14,7 @@ sufficient for proof of a phenomenon, however it is sufficient to validate curre
 conditions necessary for our model to represent a stable contact system, we will validate the current analytical understanding 
 of a prevalent type of star system.
 
-[![Everything Is AWESOME](https://img.youtube.com/vi/CefOApx5AQI/hqdefault.jpg)](https://youtu.be/CefOApx5AQI)
-
+[![Presentation](/images/thumbnail.jpg)](https://youtu.be/CefOApx5AQI "Presentation Recording - Click to Watch!")
 ### Moving forward
 - [X] Develop multi-GPU Simulation
 - [ ] Develop Particle Simulation saving protocol
