@@ -1,4 +1,7 @@
-### N-Body Simulation of Binary Star Mass Transfer
+## N-Body Simulation of Binary Star Mass Transfer
+
+<img src="/logo.jpg" width="200" />
+
 Binary star systems are a pair of stars orbiting around a common center of mass. Due to their abundance and unique 
 characteristics, such systems are invaluable sources of astrophysical data. In this study we are concerned with contact binary 
 systems: a pair of stars in physical contact sharing a common envelope. Due to mass transfer between the stars, the structure 
@@ -10,3 +13,10 @@ modeling capabilities as well as allow us to explore alternate algorithms for mo
 sufficient for proof of a phenomenon, however it is sufficient to validate current analytical understanding. If we identify 
 conditions necessary for our model to represent a stable contact system, we will validate the current analytical understanding 
 of a prevalent type of star system.
+
+
+### Moving forward
+- [X] Develop multi-GPU Simulation
+- [ ] Develop Particle Simulation saving protocol
+- [ ] Refactor code for a more powerful machine
+- [ ] Develop Graphics engine for post processing
