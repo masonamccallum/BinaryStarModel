@@ -13,3 +13,10 @@ modeling capabilities as well as allow us to explore alternate algorithms for mo
 sufficient for proof of a phenomenon, however it is sufficient to validate current analytical understanding. If we identify 
 conditions necessary for our model to represent a stable contact system, we will validate the current analytical understanding 
 of a prevalent type of star system.
+
+
+### Moving forward
+- [X] Develop muli-GPU Simulation
+- [ ] Develop Particle Simulation saving protocol
+- [ ] Refactor code for a more powerful machine
+- [ ] Develop Graphics engine for post processing
