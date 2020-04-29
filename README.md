@@ -15,6 +15,8 @@ conditions necessary for our model to represent a stable contact system, we will
 of a prevalent type of star system.
 
 [![Presentation](/images/thumbnail.jpg)](https://youtu.be/CefOApx5AQI "Presentation Recording - Click to Watch!")
+Presentation Recording
+
 ### Moving forward
 - [X] Develop multi-GPU Simulation
 - [ ] Develop Particle Simulation saving protocol
