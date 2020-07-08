@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/application.dir/src/IndexBuffer.cpp.o CMakeFiles/application.dir/src/Renderer.cpp.o CMakeFiles/application.dir/src/VertexBuffer.cpp.o CMakeFiles/application.dir/src/application.cpp.o  -o application 
