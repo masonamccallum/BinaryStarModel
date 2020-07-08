@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/app.dir/src/main/application.cpp.o  -o app 
