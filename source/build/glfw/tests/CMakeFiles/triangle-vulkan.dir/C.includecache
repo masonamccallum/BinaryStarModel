@@ -62,7 +62,7 @@ GL/glext.h
 GL/glu.h
 -
 
-/home/lab/BinaryStarModel/src/glfw/deps/glad_vulkan.c
+/home/lab/BinaryStarModel/source/glfw/deps/glad_vulkan.c
 stdio.h
 -
 stdlib.h
@@ -72,7 +72,7 @@ string.h
 glad/vulkan.h
 -
 
-/home/lab/BinaryStarModel/src/glfw/tests/triangle-vulkan.c
+/home/lab/BinaryStarModel/source/glfw/tests/triangle-vulkan.c
 stdio.h
 -
 stdlib.h

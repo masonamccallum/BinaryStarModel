@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lab/BinaryStarModel/src
+CMAKE_SOURCE_DIR = /home/lab/BinaryStarModel/source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lab/BinaryStarModel/src/build
+CMAKE_BINARY_DIR = /home/lab/BinaryStarModel/source/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,9 +126,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lab/BinaryStarModel/src/build/CMakeFiles /home/lab/BinaryStarModel/src/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lab/BinaryStarModel/source/build/CMakeFiles /home/lab/BinaryStarModel/source/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lab/BinaryStarModel/src/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lab/BinaryStarModel/source/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -509,6 +509,33 @@ src/Renderer.cpp.s:
 	$(MAKE) -f CMakeFiles/StarStuff.dir/build.make CMakeFiles/StarStuff.dir/src/Renderer.cpp.s
 .PHONY : src/Renderer.cpp.s
 
+src/VertexArray.o: src/VertexArray.cpp.o
+
+.PHONY : src/VertexArray.o
+
+# target to build an object file
+src/VertexArray.cpp.o:
+	$(MAKE) -f CMakeFiles/StarStuff.dir/build.make CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o
+.PHONY : src/VertexArray.cpp.o
+
+src/VertexArray.i: src/VertexArray.cpp.i
+
+.PHONY : src/VertexArray.i
+
+# target to preprocess a source file
+src/VertexArray.cpp.i:
+	$(MAKE) -f CMakeFiles/StarStuff.dir/build.make CMakeFiles/StarStuff.dir/src/VertexArray.cpp.i
+.PHONY : src/VertexArray.cpp.i
+
+src/VertexArray.s: src/VertexArray.cpp.s
+
+.PHONY : src/VertexArray.s
+
+# target to generate assembly for a file
+src/VertexArray.cpp.s:
+	$(MAKE) -f CMakeFiles/StarStuff.dir/build.make CMakeFiles/StarStuff.dir/src/VertexArray.cpp.s
+.PHONY : src/VertexArray.cpp.s
+
 src/VertexBuffer.o: src/VertexBuffer.cpp.o
 
 .PHONY : src/VertexBuffer.o
@@ -604,6 +631,9 @@ help:
 	@echo "... src/Renderer.o"
 	@echo "... src/Renderer.i"
 	@echo "... src/Renderer.s"
+	@echo "... src/VertexArray.o"
+	@echo "... src/VertexArray.i"
+	@echo "... src/VertexArray.s"
 	@echo "... src/VertexBuffer.o"
 	@echo "... src/VertexBuffer.i"
 	@echo "... src/VertexBuffer.s"

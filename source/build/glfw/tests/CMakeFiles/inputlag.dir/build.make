@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lab/BinaryStarModel/src
+CMAKE_SOURCE_DIR = /home/lab/BinaryStarModel/source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lab/BinaryStarModel/src/build
+CMAKE_BINARY_DIR = /home/lab/BinaryStarModel/source/build
 
 # Include any dependencies generated for this target.
 include glfw/tests/CMakeFiles/inputlag.dir/depend.make
@@ -59,42 +59,42 @@ include glfw/tests/CMakeFiles/inputlag.dir/flags.make
 
 glfw/tests/CMakeFiles/inputlag.dir/inputlag.c.o: glfw/tests/CMakeFiles/inputlag.dir/flags.make
 glfw/tests/CMakeFiles/inputlag.dir/inputlag.c.o: ../glfw/tests/inputlag.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object glfw/tests/CMakeFiles/inputlag.dir/inputlag.c.o"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/inputlag.dir/inputlag.c.o   -c /home/lab/BinaryStarModel/src/glfw/tests/inputlag.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object glfw/tests/CMakeFiles/inputlag.dir/inputlag.c.o"
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/inputlag.dir/inputlag.c.o   -c /home/lab/BinaryStarModel/source/glfw/tests/inputlag.c
 
 glfw/tests/CMakeFiles/inputlag.dir/inputlag.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/inputlag.dir/inputlag.c.i"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/src/glfw/tests/inputlag.c > CMakeFiles/inputlag.dir/inputlag.c.i
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/source/glfw/tests/inputlag.c > CMakeFiles/inputlag.dir/inputlag.c.i
 
 glfw/tests/CMakeFiles/inputlag.dir/inputlag.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/inputlag.dir/inputlag.c.s"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/src/glfw/tests/inputlag.c -o CMakeFiles/inputlag.dir/inputlag.c.s
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/source/glfw/tests/inputlag.c -o CMakeFiles/inputlag.dir/inputlag.c.s
 
 glfw/tests/CMakeFiles/inputlag.dir/__/deps/getopt.c.o: glfw/tests/CMakeFiles/inputlag.dir/flags.make
 glfw/tests/CMakeFiles/inputlag.dir/__/deps/getopt.c.o: ../glfw/deps/getopt.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object glfw/tests/CMakeFiles/inputlag.dir/__/deps/getopt.c.o"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/inputlag.dir/__/deps/getopt.c.o   -c /home/lab/BinaryStarModel/src/glfw/deps/getopt.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object glfw/tests/CMakeFiles/inputlag.dir/__/deps/getopt.c.o"
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/inputlag.dir/__/deps/getopt.c.o   -c /home/lab/BinaryStarModel/source/glfw/deps/getopt.c
 
 glfw/tests/CMakeFiles/inputlag.dir/__/deps/getopt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/inputlag.dir/__/deps/getopt.c.i"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/src/glfw/deps/getopt.c > CMakeFiles/inputlag.dir/__/deps/getopt.c.i
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/source/glfw/deps/getopt.c > CMakeFiles/inputlag.dir/__/deps/getopt.c.i
 
 glfw/tests/CMakeFiles/inputlag.dir/__/deps/getopt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/inputlag.dir/__/deps/getopt.c.s"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/src/glfw/deps/getopt.c -o CMakeFiles/inputlag.dir/__/deps/getopt.c.s
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/source/glfw/deps/getopt.c -o CMakeFiles/inputlag.dir/__/deps/getopt.c.s
 
 glfw/tests/CMakeFiles/inputlag.dir/__/deps/glad_gl.c.o: glfw/tests/CMakeFiles/inputlag.dir/flags.make
 glfw/tests/CMakeFiles/inputlag.dir/__/deps/glad_gl.c.o: ../glfw/deps/glad_gl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object glfw/tests/CMakeFiles/inputlag.dir/__/deps/glad_gl.c.o"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/inputlag.dir/__/deps/glad_gl.c.o   -c /home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object glfw/tests/CMakeFiles/inputlag.dir/__/deps/glad_gl.c.o"
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/inputlag.dir/__/deps/glad_gl.c.o   -c /home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c
 
 glfw/tests/CMakeFiles/inputlag.dir/__/deps/glad_gl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/inputlag.dir/__/deps/glad_gl.c.i"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c > CMakeFiles/inputlag.dir/__/deps/glad_gl.c.i
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c > CMakeFiles/inputlag.dir/__/deps/glad_gl.c.i
 
 glfw/tests/CMakeFiles/inputlag.dir/__/deps/glad_gl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/inputlag.dir/__/deps/glad_gl.c.s"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c -o CMakeFiles/inputlag.dir/__/deps/glad_gl.c.s
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c -o CMakeFiles/inputlag.dir/__/deps/glad_gl.c.s
 
 # Object files for target inputlag
 inputlag_OBJECTS = \
@@ -115,8 +115,8 @@ glfw/tests/inputlag: /usr/lib/x86_64-linux-gnu/librt.so
 glfw/tests/inputlag: /usr/lib/x86_64-linux-gnu/libm.so
 glfw/tests/inputlag: /usr/lib/x86_64-linux-gnu/libX11.so
 glfw/tests/inputlag: glfw/tests/CMakeFiles/inputlag.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lab/BinaryStarModel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable inputlag"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/inputlag.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable inputlag"
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/inputlag.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 glfw/tests/CMakeFiles/inputlag.dir/build: glfw/tests/inputlag
@@ -124,10 +124,10 @@ glfw/tests/CMakeFiles/inputlag.dir/build: glfw/tests/inputlag
 .PHONY : glfw/tests/CMakeFiles/inputlag.dir/build
 
 glfw/tests/CMakeFiles/inputlag.dir/clean:
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && $(CMAKE_COMMAND) -P CMakeFiles/inputlag.dir/cmake_clean.cmake
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && $(CMAKE_COMMAND) -P CMakeFiles/inputlag.dir/cmake_clean.cmake
 .PHONY : glfw/tests/CMakeFiles/inputlag.dir/clean
 
 glfw/tests/CMakeFiles/inputlag.dir/depend:
-	cd /home/lab/BinaryStarModel/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lab/BinaryStarModel/src /home/lab/BinaryStarModel/src/glfw/tests /home/lab/BinaryStarModel/src/build /home/lab/BinaryStarModel/src/build/glfw/tests /home/lab/BinaryStarModel/src/build/glfw/tests/CMakeFiles/inputlag.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lab/BinaryStarModel/source/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lab/BinaryStarModel/source /home/lab/BinaryStarModel/source/glfw/tests /home/lab/BinaryStarModel/source/build /home/lab/BinaryStarModel/source/build/glfw/tests /home/lab/BinaryStarModel/source/build/glfw/tests/CMakeFiles/inputlag.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : glfw/tests/CMakeFiles/inputlag.dir/depend
 

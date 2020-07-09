@@ -4,10 +4,10 @@
 glfw/tests/CMakeFiles/reopen.dir/__/deps/glad_gl.c.o
  ../glfw/deps/glad/gl.h
  ../glfw/deps/glad/khrplatform.h
- /home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c
+ /home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c
 glfw/tests/CMakeFiles/reopen.dir/reopen.c.o
  ../glfw/deps/glad/gl.h
  ../glfw/deps/glad/khrplatform.h
  ../glfw/deps/linmath.h
  ../glfw/include/GLFW/glfw3.h
- /home/lab/BinaryStarModel/src/glfw/tests/reopen.c
+ /home/lab/BinaryStarModel/source/glfw/tests/reopen.c

@@ -1,4 +1,4 @@
-# Install script for directory: /home/lab/BinaryStarModel/src/glfw/tests
+# Install script for directory: /home/lab/BinaryStarModel/source/glfw/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

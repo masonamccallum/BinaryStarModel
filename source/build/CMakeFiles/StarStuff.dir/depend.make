@@ -7,6 +7,12 @@ CMakeFiles/StarStuff.dir/src/IndexBuffer.cpp.o: ../src/IndexBuffer.cpp
 
 CMakeFiles/StarStuff.dir/src/Renderer.cpp.o: ../src/Renderer.cpp
 
+CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o: ../include/Renderer.h
+CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o: ../include/VertexArray.h
+CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o: ../include/VertexBuffer.h
+CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o: ../include/VertexBufferLayout.h
+CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o: ../src/VertexArray.cpp
+
 CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o: ../include/Renderer.h
 CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o: ../include/VertexBuffer.h
 CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o: ../src/VertexBuffer.cpp
@@ -14,6 +20,8 @@ CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o: ../src/VertexBuffer.cpp
 CMakeFiles/StarStuff.dir/src/application.cpp.o: ../glfw/include/GLFW/glfw3.h
 CMakeFiles/StarStuff.dir/src/application.cpp.o: ../include/IndexBuffer.h
 CMakeFiles/StarStuff.dir/src/application.cpp.o: ../include/Renderer.h
+CMakeFiles/StarStuff.dir/src/application.cpp.o: ../include/VertexArray.h
 CMakeFiles/StarStuff.dir/src/application.cpp.o: ../include/VertexBuffer.h
+CMakeFiles/StarStuff.dir/src/application.cpp.o: ../include/VertexBufferLayout.h
 CMakeFiles/StarStuff.dir/src/application.cpp.o: ../src/application.cpp
 

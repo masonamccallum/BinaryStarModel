@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/StarStuff.dir/src/IndexBuffer.cpp.o"
   "CMakeFiles/StarStuff.dir/src/Renderer.cpp.o"
+  "CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o"
   "CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o"
   "CMakeFiles/StarStuff.dir/src/application.cpp.o"
   "StarStuff"

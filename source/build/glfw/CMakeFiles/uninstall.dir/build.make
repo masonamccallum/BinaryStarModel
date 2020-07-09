@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lab/BinaryStarModel/src
+CMAKE_SOURCE_DIR = /home/lab/BinaryStarModel/source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lab/BinaryStarModel/src/build
+CMAKE_BINARY_DIR = /home/lab/BinaryStarModel/source/build
 
 # Utility rule file for uninstall.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/lab/BinaryStarModel/src/build
 include glfw/CMakeFiles/uninstall.dir/progress.make
 
 glfw/CMakeFiles/uninstall:
-	cd /home/lab/BinaryStarModel/src/build/glfw && /usr/bin/cmake -P /home/lab/BinaryStarModel/src/build/glfw/cmake_uninstall.cmake
+	cd /home/lab/BinaryStarModel/source/build/glfw && /usr/bin/cmake -P /home/lab/BinaryStarModel/source/build/glfw/cmake_uninstall.cmake
 
 uninstall: glfw/CMakeFiles/uninstall
 uninstall: glfw/CMakeFiles/uninstall.dir/build.make
@@ -67,10 +67,10 @@ glfw/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : glfw/CMakeFiles/uninstall.dir/build
 
 glfw/CMakeFiles/uninstall.dir/clean:
-	cd /home/lab/BinaryStarModel/src/build/glfw && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd /home/lab/BinaryStarModel/source/build/glfw && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : glfw/CMakeFiles/uninstall.dir/clean
 
 glfw/CMakeFiles/uninstall.dir/depend:
-	cd /home/lab/BinaryStarModel/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lab/BinaryStarModel/src /home/lab/BinaryStarModel/src/glfw /home/lab/BinaryStarModel/src/build /home/lab/BinaryStarModel/src/build/glfw /home/lab/BinaryStarModel/src/build/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lab/BinaryStarModel/source/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lab/BinaryStarModel/source /home/lab/BinaryStarModel/source/glfw /home/lab/BinaryStarModel/source/build /home/lab/BinaryStarModel/source/build/glfw /home/lab/BinaryStarModel/source/build/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : glfw/CMakeFiles/uninstall.dir/depend
 

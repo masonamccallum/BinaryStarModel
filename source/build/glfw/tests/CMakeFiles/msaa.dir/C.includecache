@@ -70,17 +70,17 @@ GL/glext.h
 GL/glu.h
 -
 
-/home/lab/BinaryStarModel/src/glfw/deps/getopt.c
+/home/lab/BinaryStarModel/source/glfw/deps/getopt.c
 getopt.h
-/home/lab/BinaryStarModel/src/glfw/deps/getopt.h
+/home/lab/BinaryStarModel/source/glfw/deps/getopt.h
 stddef.h
 -
 string.h
 -
 
-/home/lab/BinaryStarModel/src/glfw/deps/getopt.h
+/home/lab/BinaryStarModel/source/glfw/deps/getopt.h
 
-/home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c
+/home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c
 stdio.h
 -
 stdlib.h
@@ -90,17 +90,17 @@ string.h
 glad/gl.h
 -
 
-/home/lab/BinaryStarModel/src/glfw/tests/msaa.c
+/home/lab/BinaryStarModel/source/glfw/tests/msaa.c
 glad/gl.h
 -
 GLFW/glfw3.h
 -
 linmath.h
-/home/lab/BinaryStarModel/src/glfw/tests/linmath.h
+/home/lab/BinaryStarModel/source/glfw/tests/linmath.h
 stdio.h
 -
 stdlib.h
 -
 getopt.h
-/home/lab/BinaryStarModel/src/glfw/tests/getopt.h
+/home/lab/BinaryStarModel/source/glfw/tests/getopt.h
 

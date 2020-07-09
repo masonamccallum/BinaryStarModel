@@ -4,9 +4,9 @@
 glfw/tests/CMakeFiles/triangle-vulkan.dir/__/deps/glad_vulkan.c.o
  ../glfw/deps/glad/vk_platform.h
  ../glfw/deps/glad/vulkan.h
- /home/lab/BinaryStarModel/src/glfw/deps/glad_vulkan.c
+ /home/lab/BinaryStarModel/source/glfw/deps/glad_vulkan.c
 glfw/tests/CMakeFiles/triangle-vulkan.dir/triangle-vulkan.c.o
  ../glfw/deps/glad/vk_platform.h
  ../glfw/deps/glad/vulkan.h
  ../glfw/include/GLFW/glfw3.h
- /home/lab/BinaryStarModel/src/glfw/tests/triangle-vulkan.c
+ /home/lab/BinaryStarModel/source/glfw/tests/triangle-vulkan.c

@@ -6,5 +6,5 @@ C_FLAGS =   -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/lab/BinaryStarModel/src/include -I/home/lab/BinaryStarModel/src/glfw/include -I/home/lab/BinaryStarModel/src/glfw/deps 
+C_INCLUDES = -I/home/lab/BinaryStarModel/source/include -I/home/lab/BinaryStarModel/source/glfw/include -I/home/lab/BinaryStarModel/source/glfw/deps 
 

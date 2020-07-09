@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/lab/BinaryStarModel/src/glfw/deps/getopt.c" "/home/lab/BinaryStarModel/src/build/glfw/tests/CMakeFiles/clipboard.dir/__/deps/getopt.c.o"
-  "/home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c" "/home/lab/BinaryStarModel/src/build/glfw/tests/CMakeFiles/clipboard.dir/__/deps/glad_gl.c.o"
-  "/home/lab/BinaryStarModel/src/glfw/tests/clipboard.c" "/home/lab/BinaryStarModel/src/build/glfw/tests/CMakeFiles/clipboard.dir/clipboard.c.o"
+  "/home/lab/BinaryStarModel/source/glfw/deps/getopt.c" "/home/lab/BinaryStarModel/source/build/glfw/tests/CMakeFiles/clipboard.dir/__/deps/getopt.c.o"
+  "/home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c" "/home/lab/BinaryStarModel/source/build/glfw/tests/CMakeFiles/clipboard.dir/__/deps/glad_gl.c.o"
+  "/home/lab/BinaryStarModel/source/glfw/tests/clipboard.c" "/home/lab/BinaryStarModel/source/build/glfw/tests/CMakeFiles/clipboard.dir/clipboard.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -19,7 +19,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/lab/BinaryStarModel/src/build/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
+  "/home/lab/BinaryStarModel/source/build/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

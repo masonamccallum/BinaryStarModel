@@ -56,9 +56,27 @@ GL/glu.h
 GL/glew.h
 -
 
+../include/VertexArray.h
+VertexBuffer.h
+../include/VertexBuffer.h
+VertexBufferLayout.h
+../include/VertexBufferLayout.h
+
 ../include/VertexBuffer.h
 
-/home/lab/BinaryStarModel/src/src/application.cpp
+../include/VertexBufferLayout.h
+GL/glew.h
+-
+vector
+-
+
+/home/lab/BinaryStarModel/source/src/VertexArray.cpp
+VertexArray.h
+/home/lab/BinaryStarModel/source/src/VertexArray.h
+Renderer.h
+/home/lab/BinaryStarModel/source/src/Renderer.h
+
+/home/lab/BinaryStarModel/source/src/application.cpp
 iostream
 -
 GL/glew.h
@@ -70,9 +88,11 @@ fstream
 sstream
 -
 Renderer.h
-/home/lab/BinaryStarModel/src/src/Renderer.h
+/home/lab/BinaryStarModel/source/src/Renderer.h
 VertexBuffer.h
-/home/lab/BinaryStarModel/src/src/VertexBuffer.h
+/home/lab/BinaryStarModel/source/src/VertexBuffer.h
 IndexBuffer.h
-/home/lab/BinaryStarModel/src/src/IndexBuffer.h
+/home/lab/BinaryStarModel/source/src/IndexBuffer.h
+VertexArray.h
+/home/lab/BinaryStarModel/source/src/VertexArray.h
 

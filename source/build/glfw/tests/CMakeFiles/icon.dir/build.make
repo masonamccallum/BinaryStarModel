@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lab/BinaryStarModel/src
+CMAKE_SOURCE_DIR = /home/lab/BinaryStarModel/source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lab/BinaryStarModel/src/build
+CMAKE_BINARY_DIR = /home/lab/BinaryStarModel/source/build
 
 # Include any dependencies generated for this target.
 include glfw/tests/CMakeFiles/icon.dir/depend.make
@@ -59,29 +59,29 @@ include glfw/tests/CMakeFiles/icon.dir/flags.make
 
 glfw/tests/CMakeFiles/icon.dir/icon.c.o: glfw/tests/CMakeFiles/icon.dir/flags.make
 glfw/tests/CMakeFiles/icon.dir/icon.c.o: ../glfw/tests/icon.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object glfw/tests/CMakeFiles/icon.dir/icon.c.o"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/icon.dir/icon.c.o   -c /home/lab/BinaryStarModel/src/glfw/tests/icon.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object glfw/tests/CMakeFiles/icon.dir/icon.c.o"
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/icon.dir/icon.c.o   -c /home/lab/BinaryStarModel/source/glfw/tests/icon.c
 
 glfw/tests/CMakeFiles/icon.dir/icon.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/icon.dir/icon.c.i"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/src/glfw/tests/icon.c > CMakeFiles/icon.dir/icon.c.i
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/source/glfw/tests/icon.c > CMakeFiles/icon.dir/icon.c.i
 
 glfw/tests/CMakeFiles/icon.dir/icon.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/icon.dir/icon.c.s"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/src/glfw/tests/icon.c -o CMakeFiles/icon.dir/icon.c.s
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/source/glfw/tests/icon.c -o CMakeFiles/icon.dir/icon.c.s
 
 glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.o: glfw/tests/CMakeFiles/icon.dir/flags.make
 glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.o: ../glfw/deps/glad_gl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.o"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/icon.dir/__/deps/glad_gl.c.o   -c /home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.o"
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/icon.dir/__/deps/glad_gl.c.o   -c /home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c
 
 glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/icon.dir/__/deps/glad_gl.c.i"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c > CMakeFiles/icon.dir/__/deps/glad_gl.c.i
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c > CMakeFiles/icon.dir/__/deps/glad_gl.c.i
 
 glfw/tests/CMakeFiles/icon.dir/__/deps/glad_gl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/icon.dir/__/deps/glad_gl.c.s"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c -o CMakeFiles/icon.dir/__/deps/glad_gl.c.s
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c -o CMakeFiles/icon.dir/__/deps/glad_gl.c.s
 
 # Object files for target icon
 icon_OBJECTS = \
@@ -100,8 +100,8 @@ glfw/tests/icon: /usr/lib/x86_64-linux-gnu/librt.so
 glfw/tests/icon: /usr/lib/x86_64-linux-gnu/libm.so
 glfw/tests/icon: /usr/lib/x86_64-linux-gnu/libX11.so
 glfw/tests/icon: glfw/tests/CMakeFiles/icon.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lab/BinaryStarModel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable icon"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/icon.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable icon"
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/icon.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 glfw/tests/CMakeFiles/icon.dir/build: glfw/tests/icon
@@ -109,10 +109,10 @@ glfw/tests/CMakeFiles/icon.dir/build: glfw/tests/icon
 .PHONY : glfw/tests/CMakeFiles/icon.dir/build
 
 glfw/tests/CMakeFiles/icon.dir/clean:
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && $(CMAKE_COMMAND) -P CMakeFiles/icon.dir/cmake_clean.cmake
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && $(CMAKE_COMMAND) -P CMakeFiles/icon.dir/cmake_clean.cmake
 .PHONY : glfw/tests/CMakeFiles/icon.dir/clean
 
 glfw/tests/CMakeFiles/icon.dir/depend:
-	cd /home/lab/BinaryStarModel/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lab/BinaryStarModel/src /home/lab/BinaryStarModel/src/glfw/tests /home/lab/BinaryStarModel/src/build /home/lab/BinaryStarModel/src/build/glfw/tests /home/lab/BinaryStarModel/src/build/glfw/tests/CMakeFiles/icon.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lab/BinaryStarModel/source/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lab/BinaryStarModel/source /home/lab/BinaryStarModel/source/glfw/tests /home/lab/BinaryStarModel/source/build /home/lab/BinaryStarModel/source/build/glfw/tests /home/lab/BinaryStarModel/source/build/glfw/tests/CMakeFiles/icon.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : glfw/tests/CMakeFiles/icon.dir/depend
 

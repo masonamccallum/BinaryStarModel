@@ -4,16 +4,24 @@
 CMakeFiles/StarStuff.dir/src/IndexBuffer.cpp.o
  ../include/IndexBuffer.h
  ../include/Renderer.h
- /home/lab/BinaryStarModel/src/src/IndexBuffer.cpp
+ /home/lab/BinaryStarModel/source/src/IndexBuffer.cpp
 CMakeFiles/StarStuff.dir/src/Renderer.cpp.o
- /home/lab/BinaryStarModel/src/src/Renderer.cpp
+ /home/lab/BinaryStarModel/source/src/Renderer.cpp
+CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o
+ ../include/Renderer.h
+ ../include/VertexArray.h
+ ../include/VertexBuffer.h
+ ../include/VertexBufferLayout.h
+ /home/lab/BinaryStarModel/source/src/VertexArray.cpp
 CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o
  ../include/Renderer.h
  ../include/VertexBuffer.h
- /home/lab/BinaryStarModel/src/src/VertexBuffer.cpp
+ /home/lab/BinaryStarModel/source/src/VertexBuffer.cpp
 CMakeFiles/StarStuff.dir/src/application.cpp.o
  ../glfw/include/GLFW/glfw3.h
  ../include/IndexBuffer.h
  ../include/Renderer.h
+ ../include/VertexArray.h
  ../include/VertexBuffer.h
- /home/lab/BinaryStarModel/src/src/application.cpp
+ ../include/VertexBufferLayout.h
+ /home/lab/BinaryStarModel/source/src/application.cpp

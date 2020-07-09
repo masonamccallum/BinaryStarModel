@@ -4,13 +4,13 @@
 glfw/tests/CMakeFiles/empty.dir/__/deps/glad_gl.c.o
  ../glfw/deps/glad/gl.h
  ../glfw/deps/glad/khrplatform.h
- /home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c
+ /home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c
 glfw/tests/CMakeFiles/empty.dir/__/deps/tinycthread.c.o
- /home/lab/BinaryStarModel/src/glfw/deps/tinycthread.c
- /home/lab/BinaryStarModel/src/glfw/deps/tinycthread.h
+ /home/lab/BinaryStarModel/source/glfw/deps/tinycthread.c
+ /home/lab/BinaryStarModel/source/glfw/deps/tinycthread.h
 glfw/tests/CMakeFiles/empty.dir/empty.c.o
  ../glfw/deps/glad/gl.h
  ../glfw/deps/glad/khrplatform.h
  ../glfw/deps/tinycthread.h
  ../glfw/include/GLFW/glfw3.h
- /home/lab/BinaryStarModel/src/glfw/tests/empty.c
+ /home/lab/BinaryStarModel/source/glfw/tests/empty.c

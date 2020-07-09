@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lab/BinaryStarModel/src
+CMAKE_SOURCE_DIR = /home/lab/BinaryStarModel/source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lab/BinaryStarModel/src/build
+CMAKE_BINARY_DIR = /home/lab/BinaryStarModel/source/build
 
 # Include any dependencies generated for this target.
 include glfw/tests/CMakeFiles/clipboard.dir/depend.make
@@ -59,42 +59,42 @@ include glfw/tests/CMakeFiles/clipboard.dir/flags.make
 
 glfw/tests/CMakeFiles/clipboard.dir/clipboard.c.o: glfw/tests/CMakeFiles/clipboard.dir/flags.make
 glfw/tests/CMakeFiles/clipboard.dir/clipboard.c.o: ../glfw/tests/clipboard.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object glfw/tests/CMakeFiles/clipboard.dir/clipboard.c.o"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/clipboard.dir/clipboard.c.o   -c /home/lab/BinaryStarModel/src/glfw/tests/clipboard.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object glfw/tests/CMakeFiles/clipboard.dir/clipboard.c.o"
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/clipboard.dir/clipboard.c.o   -c /home/lab/BinaryStarModel/source/glfw/tests/clipboard.c
 
 glfw/tests/CMakeFiles/clipboard.dir/clipboard.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/clipboard.dir/clipboard.c.i"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/src/glfw/tests/clipboard.c > CMakeFiles/clipboard.dir/clipboard.c.i
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/source/glfw/tests/clipboard.c > CMakeFiles/clipboard.dir/clipboard.c.i
 
 glfw/tests/CMakeFiles/clipboard.dir/clipboard.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/clipboard.dir/clipboard.c.s"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/src/glfw/tests/clipboard.c -o CMakeFiles/clipboard.dir/clipboard.c.s
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/source/glfw/tests/clipboard.c -o CMakeFiles/clipboard.dir/clipboard.c.s
 
 glfw/tests/CMakeFiles/clipboard.dir/__/deps/getopt.c.o: glfw/tests/CMakeFiles/clipboard.dir/flags.make
 glfw/tests/CMakeFiles/clipboard.dir/__/deps/getopt.c.o: ../glfw/deps/getopt.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object glfw/tests/CMakeFiles/clipboard.dir/__/deps/getopt.c.o"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/clipboard.dir/__/deps/getopt.c.o   -c /home/lab/BinaryStarModel/src/glfw/deps/getopt.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object glfw/tests/CMakeFiles/clipboard.dir/__/deps/getopt.c.o"
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/clipboard.dir/__/deps/getopt.c.o   -c /home/lab/BinaryStarModel/source/glfw/deps/getopt.c
 
 glfw/tests/CMakeFiles/clipboard.dir/__/deps/getopt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/clipboard.dir/__/deps/getopt.c.i"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/src/glfw/deps/getopt.c > CMakeFiles/clipboard.dir/__/deps/getopt.c.i
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/source/glfw/deps/getopt.c > CMakeFiles/clipboard.dir/__/deps/getopt.c.i
 
 glfw/tests/CMakeFiles/clipboard.dir/__/deps/getopt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/clipboard.dir/__/deps/getopt.c.s"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/src/glfw/deps/getopt.c -o CMakeFiles/clipboard.dir/__/deps/getopt.c.s
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/source/glfw/deps/getopt.c -o CMakeFiles/clipboard.dir/__/deps/getopt.c.s
 
 glfw/tests/CMakeFiles/clipboard.dir/__/deps/glad_gl.c.o: glfw/tests/CMakeFiles/clipboard.dir/flags.make
 glfw/tests/CMakeFiles/clipboard.dir/__/deps/glad_gl.c.o: ../glfw/deps/glad_gl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object glfw/tests/CMakeFiles/clipboard.dir/__/deps/glad_gl.c.o"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/clipboard.dir/__/deps/glad_gl.c.o   -c /home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object glfw/tests/CMakeFiles/clipboard.dir/__/deps/glad_gl.c.o"
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/clipboard.dir/__/deps/glad_gl.c.o   -c /home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c
 
 glfw/tests/CMakeFiles/clipboard.dir/__/deps/glad_gl.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/clipboard.dir/__/deps/glad_gl.c.i"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c > CMakeFiles/clipboard.dir/__/deps/glad_gl.c.i
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c > CMakeFiles/clipboard.dir/__/deps/glad_gl.c.i
 
 glfw/tests/CMakeFiles/clipboard.dir/__/deps/glad_gl.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/clipboard.dir/__/deps/glad_gl.c.s"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c -o CMakeFiles/clipboard.dir/__/deps/glad_gl.c.s
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c -o CMakeFiles/clipboard.dir/__/deps/glad_gl.c.s
 
 # Object files for target clipboard
 clipboard_OBJECTS = \
@@ -115,8 +115,8 @@ glfw/tests/clipboard: /usr/lib/x86_64-linux-gnu/librt.so
 glfw/tests/clipboard: /usr/lib/x86_64-linux-gnu/libm.so
 glfw/tests/clipboard: /usr/lib/x86_64-linux-gnu/libX11.so
 glfw/tests/clipboard: glfw/tests/CMakeFiles/clipboard.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lab/BinaryStarModel/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable clipboard"
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/clipboard.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable clipboard"
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/clipboard.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 glfw/tests/CMakeFiles/clipboard.dir/build: glfw/tests/clipboard
@@ -124,10 +124,10 @@ glfw/tests/CMakeFiles/clipboard.dir/build: glfw/tests/clipboard
 .PHONY : glfw/tests/CMakeFiles/clipboard.dir/build
 
 glfw/tests/CMakeFiles/clipboard.dir/clean:
-	cd /home/lab/BinaryStarModel/src/build/glfw/tests && $(CMAKE_COMMAND) -P CMakeFiles/clipboard.dir/cmake_clean.cmake
+	cd /home/lab/BinaryStarModel/source/build/glfw/tests && $(CMAKE_COMMAND) -P CMakeFiles/clipboard.dir/cmake_clean.cmake
 .PHONY : glfw/tests/CMakeFiles/clipboard.dir/clean
 
 glfw/tests/CMakeFiles/clipboard.dir/depend:
-	cd /home/lab/BinaryStarModel/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lab/BinaryStarModel/src /home/lab/BinaryStarModel/src/glfw/tests /home/lab/BinaryStarModel/src/build /home/lab/BinaryStarModel/src/build/glfw/tests /home/lab/BinaryStarModel/src/build/glfw/tests/CMakeFiles/clipboard.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/lab/BinaryStarModel/source/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lab/BinaryStarModel/source /home/lab/BinaryStarModel/source/glfw/tests /home/lab/BinaryStarModel/source/build /home/lab/BinaryStarModel/source/build/glfw/tests /home/lab/BinaryStarModel/source/build/glfw/tests/CMakeFiles/clipboard.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : glfw/tests/CMakeFiles/clipboard.dir/depend
 

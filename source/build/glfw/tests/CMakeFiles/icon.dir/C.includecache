@@ -64,7 +64,7 @@ GL/glext.h
 GL/glu.h
 -
 
-/home/lab/BinaryStarModel/src/glfw/deps/glad_gl.c
+/home/lab/BinaryStarModel/source/glfw/deps/glad_gl.c
 stdio.h
 -
 stdlib.h
@@ -74,7 +74,7 @@ string.h
 glad/gl.h
 -
 
-/home/lab/BinaryStarModel/src/glfw/tests/icon.c
+/home/lab/BinaryStarModel/source/glfw/tests/icon.c
 glad/gl.h
 -
 GLFW/glfw3.h
