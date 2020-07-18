@@ -179,7 +179,7 @@ uninstall: cmake_check_build_system
 
 # fast build rule for target.
 uninstall/fast:
-	$(MAKE) -f glfw/CMakeFiles/uninstall.dir/build.make glfw/CMakeFiles/uninstall.dir/build
+	$(MAKE) -f src/vendor/glfw/CMakeFiles/uninstall.dir/build.make src/vendor/glfw/CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
 
 #=============================================================================
@@ -192,7 +192,7 @@ glfw: cmake_check_build_system
 
 # fast build rule for target.
 glfw/fast:
-	$(MAKE) -f glfw/src/CMakeFiles/glfw.dir/build.make glfw/src/CMakeFiles/glfw.dir/build
+	$(MAKE) -f src/vendor/glfw/src/CMakeFiles/glfw.dir/build.make src/vendor/glfw/src/CMakeFiles/glfw.dir/build
 .PHONY : glfw/fast
 
 #=============================================================================
@@ -205,7 +205,7 @@ triangle-vulkan: cmake_check_build_system
 
 # fast build rule for target.
 triangle-vulkan/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/triangle-vulkan.dir/build.make glfw/tests/CMakeFiles/triangle-vulkan.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/triangle-vulkan.dir/build.make src/vendor/glfw/tests/CMakeFiles/triangle-vulkan.dir/build
 .PHONY : triangle-vulkan/fast
 
 #=============================================================================
@@ -218,7 +218,7 @@ tearing: cmake_check_build_system
 
 # fast build rule for target.
 tearing/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/tearing.dir/build.make glfw/tests/CMakeFiles/tearing.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/tearing.dir/build.make src/vendor/glfw/tests/CMakeFiles/tearing.dir/build
 .PHONY : tearing/fast
 
 #=============================================================================
@@ -231,7 +231,7 @@ title: cmake_check_build_system
 
 # fast build rule for target.
 title/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/title.dir/build.make glfw/tests/CMakeFiles/title.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/title.dir/build.make src/vendor/glfw/tests/CMakeFiles/title.dir/build
 .PHONY : title/fast
 
 #=============================================================================
@@ -244,7 +244,7 @@ opacity: cmake_check_build_system
 
 # fast build rule for target.
 opacity/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/opacity.dir/build.make glfw/tests/CMakeFiles/opacity.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/opacity.dir/build.make src/vendor/glfw/tests/CMakeFiles/opacity.dir/build
 .PHONY : opacity/fast
 
 #=============================================================================
@@ -257,7 +257,7 @@ clipboard: cmake_check_build_system
 
 # fast build rule for target.
 clipboard/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/clipboard.dir/build.make glfw/tests/CMakeFiles/clipboard.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/clipboard.dir/build.make src/vendor/glfw/tests/CMakeFiles/clipboard.dir/build
 .PHONY : clipboard/fast
 
 #=============================================================================
@@ -270,7 +270,7 @@ msaa: cmake_check_build_system
 
 # fast build rule for target.
 msaa/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/msaa.dir/build.make glfw/tests/CMakeFiles/msaa.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/msaa.dir/build.make src/vendor/glfw/tests/CMakeFiles/msaa.dir/build
 .PHONY : msaa/fast
 
 #=============================================================================
@@ -283,7 +283,7 @@ glfwinfo: cmake_check_build_system
 
 # fast build rule for target.
 glfwinfo/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/glfwinfo.dir/build.make glfw/tests/CMakeFiles/glfwinfo.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/glfwinfo.dir/build.make src/vendor/glfw/tests/CMakeFiles/glfwinfo.dir/build
 .PHONY : glfwinfo/fast
 
 #=============================================================================
@@ -296,7 +296,7 @@ iconify: cmake_check_build_system
 
 # fast build rule for target.
 iconify/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/iconify.dir/build.make glfw/tests/CMakeFiles/iconify.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/iconify.dir/build.make src/vendor/glfw/tests/CMakeFiles/iconify.dir/build
 .PHONY : iconify/fast
 
 #=============================================================================
@@ -309,7 +309,7 @@ reopen: cmake_check_build_system
 
 # fast build rule for target.
 reopen/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/reopen.dir/build.make glfw/tests/CMakeFiles/reopen.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/reopen.dir/build.make src/vendor/glfw/tests/CMakeFiles/reopen.dir/build
 .PHONY : reopen/fast
 
 #=============================================================================
@@ -322,7 +322,7 @@ gamma: cmake_check_build_system
 
 # fast build rule for target.
 gamma/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/gamma.dir/build.make glfw/tests/CMakeFiles/gamma.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/gamma.dir/build.make src/vendor/glfw/tests/CMakeFiles/gamma.dir/build
 .PHONY : gamma/fast
 
 #=============================================================================
@@ -335,7 +335,7 @@ monitors: cmake_check_build_system
 
 # fast build rule for target.
 monitors/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/monitors.dir/build.make glfw/tests/CMakeFiles/monitors.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/monitors.dir/build.make src/vendor/glfw/tests/CMakeFiles/monitors.dir/build
 .PHONY : monitors/fast
 
 #=============================================================================
@@ -348,7 +348,7 @@ windows: cmake_check_build_system
 
 # fast build rule for target.
 windows/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/windows.dir/build.make glfw/tests/CMakeFiles/windows.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/windows.dir/build.make src/vendor/glfw/tests/CMakeFiles/windows.dir/build
 .PHONY : windows/fast
 
 #=============================================================================
@@ -361,7 +361,7 @@ timeout: cmake_check_build_system
 
 # fast build rule for target.
 timeout/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/timeout.dir/build.make glfw/tests/CMakeFiles/timeout.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/timeout.dir/build.make src/vendor/glfw/tests/CMakeFiles/timeout.dir/build
 .PHONY : timeout/fast
 
 #=============================================================================
@@ -374,7 +374,7 @@ inputlag: cmake_check_build_system
 
 # fast build rule for target.
 inputlag/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/inputlag.dir/build.make glfw/tests/CMakeFiles/inputlag.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/inputlag.dir/build.make src/vendor/glfw/tests/CMakeFiles/inputlag.dir/build
 .PHONY : inputlag/fast
 
 #=============================================================================
@@ -387,7 +387,7 @@ threads: cmake_check_build_system
 
 # fast build rule for target.
 threads/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/threads.dir/build.make glfw/tests/CMakeFiles/threads.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/threads.dir/build.make src/vendor/glfw/tests/CMakeFiles/threads.dir/build
 .PHONY : threads/fast
 
 #=============================================================================
@@ -400,7 +400,7 @@ cursor: cmake_check_build_system
 
 # fast build rule for target.
 cursor/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/cursor.dir/build.make glfw/tests/CMakeFiles/cursor.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/cursor.dir/build.make src/vendor/glfw/tests/CMakeFiles/cursor.dir/build
 .PHONY : cursor/fast
 
 #=============================================================================
@@ -413,7 +413,7 @@ empty: cmake_check_build_system
 
 # fast build rule for target.
 empty/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/empty.dir/build.make glfw/tests/CMakeFiles/empty.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/empty.dir/build.make src/vendor/glfw/tests/CMakeFiles/empty.dir/build
 .PHONY : empty/fast
 
 #=============================================================================
@@ -426,7 +426,7 @@ icon: cmake_check_build_system
 
 # fast build rule for target.
 icon/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/icon.dir/build.make glfw/tests/CMakeFiles/icon.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/icon.dir/build.make src/vendor/glfw/tests/CMakeFiles/icon.dir/build
 .PHONY : icon/fast
 
 #=============================================================================
@@ -439,7 +439,7 @@ events: cmake_check_build_system
 
 # fast build rule for target.
 events/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/events.dir/build.make glfw/tests/CMakeFiles/events.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/events.dir/build.make src/vendor/glfw/tests/CMakeFiles/events.dir/build
 .PHONY : events/fast
 
 #=============================================================================
@@ -452,7 +452,7 @@ joysticks: cmake_check_build_system
 
 # fast build rule for target.
 joysticks/fast:
-	$(MAKE) -f glfw/tests/CMakeFiles/joysticks.dir/build.make glfw/tests/CMakeFiles/joysticks.dir/build
+	$(MAKE) -f src/vendor/glfw/tests/CMakeFiles/joysticks.dir/build.make src/vendor/glfw/tests/CMakeFiles/joysticks.dir/build
 .PHONY : joysticks/fast
 
 src/IndexBuffer.o: src/IndexBuffer.cpp.o
@@ -508,6 +508,33 @@ src/Renderer.s: src/Renderer.cpp.s
 src/Renderer.cpp.s:
 	$(MAKE) -f CMakeFiles/StarStuff.dir/build.make CMakeFiles/StarStuff.dir/src/Renderer.cpp.s
 .PHONY : src/Renderer.cpp.s
+
+src/Shader.o: src/Shader.cpp.o
+
+.PHONY : src/Shader.o
+
+# target to build an object file
+src/Shader.cpp.o:
+	$(MAKE) -f CMakeFiles/StarStuff.dir/build.make CMakeFiles/StarStuff.dir/src/Shader.cpp.o
+.PHONY : src/Shader.cpp.o
+
+src/Shader.i: src/Shader.cpp.i
+
+.PHONY : src/Shader.i
+
+# target to preprocess a source file
+src/Shader.cpp.i:
+	$(MAKE) -f CMakeFiles/StarStuff.dir/build.make CMakeFiles/StarStuff.dir/src/Shader.cpp.i
+.PHONY : src/Shader.cpp.i
+
+src/Shader.s: src/Shader.cpp.s
+
+.PHONY : src/Shader.s
+
+# target to generate assembly for a file
+src/Shader.cpp.s:
+	$(MAKE) -f CMakeFiles/StarStuff.dir/build.make CMakeFiles/StarStuff.dir/src/Shader.cpp.s
+.PHONY : src/Shader.cpp.s
 
 src/VertexArray.o: src/VertexArray.cpp.o
 
@@ -631,6 +658,9 @@ help:
 	@echo "... src/Renderer.o"
 	@echo "... src/Renderer.i"
 	@echo "... src/Renderer.s"
+	@echo "... src/Shader.o"
+	@echo "... src/Shader.i"
+	@echo "... src/Shader.s"
 	@echo "... src/VertexArray.o"
 	@echo "... src/VertexArray.i"
 	@echo "... src/VertexArray.s"

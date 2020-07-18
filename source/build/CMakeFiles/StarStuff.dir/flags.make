@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/lab/BinaryStarModel/source/include -I/home/lab/BinaryStarModel/source/glfw/include -I/home/lab/BinaryStarModel/source/$(GLEW_INCLUDE_DIRS) 
+CXX_INCLUDES = -I/home/lab/BinaryStarModel/source/include -I/home/lab/BinaryStarModel/source/src/vendor/glfw/include -I/home/lab/BinaryStarModel/source/$(GLEW_INCLUDE_DIRS) 
 

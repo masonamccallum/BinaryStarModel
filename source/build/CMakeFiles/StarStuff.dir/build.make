@@ -83,9 +83,22 @@ CMakeFiles/StarStuff.dir/src/Renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/StarStuff.dir/src/Renderer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lab/BinaryStarModel/source/src/Renderer.cpp -o CMakeFiles/StarStuff.dir/src/Renderer.cpp.s
 
+CMakeFiles/StarStuff.dir/src/Shader.cpp.o: CMakeFiles/StarStuff.dir/flags.make
+CMakeFiles/StarStuff.dir/src/Shader.cpp.o: ../src/Shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/StarStuff.dir/src/Shader.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StarStuff.dir/src/Shader.cpp.o -c /home/lab/BinaryStarModel/source/src/Shader.cpp
+
+CMakeFiles/StarStuff.dir/src/Shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/StarStuff.dir/src/Shader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lab/BinaryStarModel/source/src/Shader.cpp > CMakeFiles/StarStuff.dir/src/Shader.cpp.i
+
+CMakeFiles/StarStuff.dir/src/Shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/StarStuff.dir/src/Shader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lab/BinaryStarModel/source/src/Shader.cpp -o CMakeFiles/StarStuff.dir/src/Shader.cpp.s
+
 CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o: CMakeFiles/StarStuff.dir/flags.make
 CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o: ../src/VertexArray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o -c /home/lab/BinaryStarModel/source/src/VertexArray.cpp
 
 CMakeFiles/StarStuff.dir/src/VertexArray.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/StarStuff.dir/src/VertexArray.cpp.s: cmake_force
 
 CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o: CMakeFiles/StarStuff.dir/flags.make
 CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o: ../src/VertexBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o -c /home/lab/BinaryStarModel/source/src/VertexBuffer.cpp
 
 CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.s: cmake_force
 
 CMakeFiles/StarStuff.dir/src/application.cpp.o: CMakeFiles/StarStuff.dir/flags.make
 CMakeFiles/StarStuff.dir/src/application.cpp.o: ../src/application.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/StarStuff.dir/src/application.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/StarStuff.dir/src/application.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StarStuff.dir/src/application.cpp.o -c /home/lab/BinaryStarModel/source/src/application.cpp
 
 CMakeFiles/StarStuff.dir/src/application.cpp.i: cmake_force
@@ -126,6 +139,7 @@ CMakeFiles/StarStuff.dir/src/application.cpp.s: cmake_force
 StarStuff_OBJECTS = \
 "CMakeFiles/StarStuff.dir/src/IndexBuffer.cpp.o" \
 "CMakeFiles/StarStuff.dir/src/Renderer.cpp.o" \
+"CMakeFiles/StarStuff.dir/src/Shader.cpp.o" \
 "CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o" \
 "CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o" \
 "CMakeFiles/StarStuff.dir/src/application.cpp.o"
@@ -135,19 +149,20 @@ StarStuff_EXTERNAL_OBJECTS =
 
 StarStuff: CMakeFiles/StarStuff.dir/src/IndexBuffer.cpp.o
 StarStuff: CMakeFiles/StarStuff.dir/src/Renderer.cpp.o
+StarStuff: CMakeFiles/StarStuff.dir/src/Shader.cpp.o
 StarStuff: CMakeFiles/StarStuff.dir/src/VertexArray.cpp.o
 StarStuff: CMakeFiles/StarStuff.dir/src/VertexBuffer.cpp.o
 StarStuff: CMakeFiles/StarStuff.dir/src/application.cpp.o
 StarStuff: CMakeFiles/StarStuff.dir/build.make
 StarStuff: /usr/lib/x86_64-linux-gnu/libGLEW.so
-StarStuff: glfw/src/libglfw3.a
+StarStuff: src/vendor/glfw/src/libglfw3.a
 StarStuff: /usr/lib/x86_64-linux-gnu/libGLX.so
 StarStuff: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 StarStuff: /usr/lib/x86_64-linux-gnu/librt.so
 StarStuff: /usr/lib/x86_64-linux-gnu/libm.so
 StarStuff: /usr/lib/x86_64-linux-gnu/libX11.so
 StarStuff: CMakeFiles/StarStuff.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable StarStuff"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lab/BinaryStarModel/source/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable StarStuff"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/StarStuff.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
