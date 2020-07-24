@@ -5,9 +5,14 @@ set(CMAKE_CXX_STANDARD 17)
 
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
-
+find_package(Threads REQUIRED)
+find_package(X11 REQUIRED)
 include_directories(include)
 include_directories("src/vendor/glfw/include")
+
+include_directories("src/vendor/imgui/")
+file(GLOB imguiFILES "src/vendor/imgui/*")
+source_group(imgui FILES ${imguiFILES})
 
 set(GLFW_BUILD_DOCS off CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TEST off CACHE BOOL "" FORCE)
