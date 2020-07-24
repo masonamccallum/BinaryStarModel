@@ -25,6 +25,6 @@ include_directories($(GLEW_INCLUDE_DIRS))
 link_libraries(${GLEW_LIBRARIES})
 
 file(GLOB SOURCES "src/*.cpp")
-add_executable(StarStuff ${SOURCES})
+add_executable(StarStuff ${SOURCES} ${imguiFILES})
 target_link_libraries(StarStuff OpenGL::GL)
 target_link_libraries(StarStuff glfw)
