@@ -8,5 +8,6 @@ void Renderer::Draw(const VertexArray& va, const IndexBuffer& ib, const Shader& 
 	shader.Bind();
 	ib.Bind();
 	va.Bind();
+	//glDrawElements(GL_POINTS, ib.GetCount(), GL_UNSIGNED_INT, nullptr);
 	glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, nullptr);
 }

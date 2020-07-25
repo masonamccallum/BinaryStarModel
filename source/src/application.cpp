@@ -38,36 +38,44 @@ int main(void){
     }
     
     float positions[] = {
-			100.0f, 100.0f, 0.0f, 0.0f,
-			200.0f, 100.0f, 1.0f, 0.0f, 
-			200.0f, 200.0f, 1.0f, 1.0f,
-			100.0f, 200.0f, 0.0f, 1.0f
+			100.0f, 100.0f, 0.0f, 0.0f, 0.18f, 0.6f, 0.96f, 1.0f,
+			200.0f, 100.0f, 1.0f, 0.0f, 0.18f, 0.6f, 0.96f, 1.0f,
+			200.0f, 200.0f, 1.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
+			100.0f, 200.0f, 0.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
+
+			900.0f, 900.0f, 0.0f, 0.0f, 1.0f, 0.93f, 0.24f, 1.0f,
+			700.0f, 900.0f, 1.0f, 0.0f, 1.0f, 0.93f, 0.24f, 1.0f,
+			700.0f, 700.0f, 1.0f, 1.0f, 1.0f, 0.93f, 0.24f, 1.0f,
+			900.0f, 700.0f, 0.0f, 1.0f, 1.0f, 0.93f, 0.24f, 1.0f
     };
 	
 		unsigned int indices[] = {
-		0,1,2,
-		2,3,0
+		0,1,2,2,3,0,
+		4,5,6,6,7,4
 		};
 		
 		VertexArray va;
-		VertexBuffer vb(positions, 4*4*sizeof(float));
+		VertexBuffer vb(positions, 8*8*sizeof(float));
     
 		VertexBufferLayout layout;
 		layout.Push<float>(2);
 		layout.Push<float>(2);
+		layout.Push<float>(4);
 		va.AddBuffer(vb, layout);
 
-		IndexBuffer ib(indices, 6);
+		IndexBuffer ib(indices, 12);
 
-		glm::mat4 proj = glm::ortho(-0.0f, 960.0f, -0.0f, 540.0f, -1.0f, 1.0f);
-		glm::vec4 vp(100.0f,100.0f,0.0f,1.0f);
+		glm::mat4 proj = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f, 0.1f, 100.0f);
+		glm::mat4 view = glm::translate(glm::mat4(1.0f), glm::vec3(300.0f,300.0f,-3.0f));
+		//glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(20,20,0));
+		glm::mat4 model = glm::rotate(glm::mat4(1.0f), glm::radians(-45.0f), glm::vec3(1.0f,0.0f,0.0f));
+		glm::mat4 mvp = proj * view * model;
 		
 
 		Shader shader("../res/shaders/Basic.shader");
 
 		shader.Bind();
-		shader.SetUniform4f("u_color", 0.8f,0.3f,0.8f,1.0f);
-		shader.SetUniformMat4f("u_MVP", proj);
+		shader.SetUniformMat4f("u_MVP", mvp);
 
 		va.Unbind();
 		shader.Unbind();
@@ -82,8 +90,6 @@ int main(void){
 		const char* glsl_version = "#version 330";
 		ImGui_ImplOpenGL3_Init(glsl_version);
 
-		
-
 		bool show_demo_window = true;
     	bool show_another_window = false;
     	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
@@ -92,11 +98,15 @@ int main(void){
 		renderer.Clear();
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
+
 		ImGui::NewFrame();
 		shader.Bind();
-		shader.SetUniform4f("u_color", 0.8f,0.3f,0.8f,1.0f);
 		renderer.Draw(va,ib,shader);
-
+		
+		{
+			/*
+		// The next section is temporary use of the imgui library this will allow for interactivity for our application
+		//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		if (show_demo_window)
             ImGui::ShowDemoWindow(&show_demo_window);
 
@@ -132,8 +142,12 @@ int main(void){
                 show_another_window = false;
             ImGui::End();
         }
+		*/
+		}
+		
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		
 		
 
       	glfwSwapBuffers(window);
