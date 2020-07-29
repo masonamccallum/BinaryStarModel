@@ -43,35 +43,11 @@ int main(void){
 	glm::mat4 view = camera.GetViewMatrix();
 	glm::mat4 model = glm::mat4(1.0f);//glm::rotate(glm::mat4(1.0f), glm::radians(-100.0f), glm::vec3(1.0f,0.0f,0.0f));
 	glm::mat4 mvp = proj * view * model;
-
-    float positions[] = {
-		5.0f, 0.0f, 0.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
-		0.0f, 0.0f, 0.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
-		0.0f, 0.0f, 5.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
-		5.0f, 0.0f, 5.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
-
-		20.0f, 20.0f, 0.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
-		10.0f, 20.0f, 0.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
-		10.0f, 10.0f, 0.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
-		20.0f, 10.0f, 0.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f
-	};
-	unsigned int indices[] = {
-	0,1,2,2,3,0,
-	4,5,6,6,7,4
-	};
 		
-	VertexArray va;
-	VertexBuffer vb(8);
-	VertexBufferLayout layout;
-	layout.Push<float>(4);
-	layout.Push<float>(4);
-	va.AddBuffer(vb, layout);
-	IndexBuffer ib(indices, 12);
-	Shader shader("../res/shaders/Basic.shader");
-
+	//TODO Abstract this section out to draw grid
+	//===================================================================================================
 	float grid_verts[4*4*(numRowCol + 1)]; // WARNING: 4 hard codes the layout of each vertex
 	unsigned int grid_idx[4*(numRowCol+1)];
-
 	float pointOne[4];
 	float pointTwo[4];
 	float leftGrid = 0.0f;
@@ -84,8 +60,6 @@ int main(void){
 	for(int i=0; i < numRowCol + 1; i++){
 		pointOne[0] = leftGrid ; pointOne[1] = 0.0f; pointOne[2] = i*gridSquareSize; pointOne[3] = 1.0f;
 		pointTwo[0] = rightGrid; pointTwo[1] = 0.0f; pointTwo[2] = i*gridSquareSize; pointTwo[3] = 1.0f;
-		std::cout << pointOne[0] << ","<< pointOne[1] << ","<< pointOne[2] << ","<< pointOne[3] << " | ";
-		std::cout << pointTwo[0] << ","<< pointTwo[1] << ","<< pointTwo[2] << ","<< pointTwo[3] << std::endl;
 		for(int k=0; k<4; k++)	{
 			grid_verts[idx*4+k] = pointOne[k];
 			grid_verts[(idx+1)*4+k] = pointTwo[k];
@@ -106,36 +80,12 @@ int main(void){
 	for(unsigned int i=0; i<4*(numRowCol+1); i++){
 		grid_idx[i] = i;
 	}
-	std::cout << "++++" << std::endl;
-	std::cout << "check two" << std::endl;
-	for(int i = 0; i < 4*20; i+=4){
-	std::cout << grid_verts[i+0] << ","<< grid_verts[i+1] << ","<< grid_verts[i+2] << ","<< grid_verts[i+3] << std::endl;
-	}
-	std::cout << "++++" << std::endl;
-	
-	std::cout << "size ";
-	std::cout << sizeof(grid_verts)/(sizeof(grid_verts[0])*4) << std::endl;
-	
-
-
-
-	float grid_vertices[]={
-		50.0f, 0.0f, 0.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
-		0.0f, 0.0f, 0.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
-		0.0f, 0.0f, 50.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
-		50.0f, 0.0f, 50.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f,
-		70.0f, 0.0f, 20.0f, 1.0f, 0.18f, 0.6f, 0.96f, 1.0f
-	};
-	unsigned int grid_index[]={
-		0,1,2,3,0,4
-	};
+	//===================================================================================================
 
 	VertexArray grid_va;
-	//VertexBuffer grid_vb(5);
 	VertexBuffer grid_vb(4*(numRowCol+1));
 	VertexBufferLayout grid_layout;
 	grid_layout.Push<float>(4);
-	//grid_layout.Push<float>(4);
 	grid_va.AddBuffer(grid_vb, grid_layout);
 	IndexBuffer grid_ib(grid_idx, 4*(numRowCol+1));
 	Shader grid_shader("../res/shaders/grid.shader");
@@ -168,13 +118,7 @@ int main(void){
 		mvp = proj*view*model;
 		grid_shader.SetUniformMat4f("u_MVP", mvp);
 
-		//vb.Update(positions);
-		//grid_vb.Update(grid_vertices);
 		grid_vb.Update(grid_verts);
-		//renderer.Draw(va,ib,shader,GL_POINTS);
-		//renderer.Draw(va,ib,shader, GL_TRIANGLES);
-		//renderer.Draw(va,ib,shader, GL_LINES);
-		//renderer.Draw(va,ib,shader, GL_LINE_STRIP);
 		renderer.Draw(grid_va,grid_ib, grid_shader, GL_LINES);
 
 		if (show_demo_window)
