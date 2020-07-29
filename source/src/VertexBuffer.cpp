@@ -3,9 +3,10 @@
 #include "Vertex.h"
 
 VertexBuffer::VertexBuffer(unsigned int count){
+    m_count = count;
     glGenBuffers(1, &m_RendererID);
     glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertex) * count, nullptr, GL_DYNAMIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float)* 4 * count, nullptr, GL_DYNAMIC_DRAW);
 }
 
 VertexBuffer::~VertexBuffer(){
@@ -22,5 +23,5 @@ void VertexBuffer::Unbind() const{
 
 void VertexBuffer::Update(float * verticies) const{
     Bind();
-    glBufferSubData(GL_ARRAY_BUFFER, 0, 5*8*sizeof(float), verticies);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, m_count*4*sizeof(float), verticies); //Warning 4 is hardcode for testing needs fixing
 }
