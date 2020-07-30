@@ -10,7 +10,6 @@
 #include "GUI.h"
 #include "Window.h"
 
-
 // camera
 Camera camera(glm::vec3(70.0f, 30.0f, 260.0f));
 // timing

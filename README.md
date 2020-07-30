@@ -23,9 +23,23 @@ Presentation Recording
 - [ ] Refactor code for a more powerful machine
 - [ ] Develop Graphics engine for post processing
 
-### Short term Goals Summer
+### Short Term Goals Summer
 - [ ] Fix flying Camera
+- [ ] Integrate Nbody with new engine
 - [ ] Save Simulation raw data
 - [ ] Import simulation from raw Data
 - [ ] Save sim to ffmpeg
 - [ ] Vamp UI for real time stats
+
+### Build Instructions
+Dependencies: CUDA v10 minimum and CMAKE
+
+'''bash
+git clone https://github.com/masonamccallum/BinaryStarModel.git
+cd BinaryStarModel/source
+mkdir build
+cd build
+cmake ..
+make
+./StarStuff
+'''
