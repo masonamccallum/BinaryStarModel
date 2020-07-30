@@ -6,25 +6,20 @@
 #include "Renderer.h"
 #include "Grid.h"
 #include "Camera.h"
-#include "input.h"
+#include "Input.h"
 #include "GUI.h"
+#include "Window.h"
 
 // camera
 Camera camera(glm::vec3(70.0f, 30.0f, 260.0f));
 // timing
 float deltaTime = 0.0f;	
 float lastFrame = 0.0f;
-extern const int width = 1600;
-extern const int height = 1000;
+const int width = 1600;
+const int height = 1000;
 
 int main(void){
-	GLFWwindow* window;
-    glfwInit();
-    window = glfwCreateWindow(width,height,"learn GLFW",NULL, NULL);
-    glfwMakeContextCurrent(window);
-	glfwSwapInterval(1);
-	glewInit();
-    glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
+	Window window(width, height);
 
 	glm::mat4 proj;
 	proj = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 400.0f);
@@ -34,16 +29,16 @@ int main(void){
 		
 	Renderer renderer;	
 	Grid grid(5.0f, mvp);
-	GUI gui(window);
+	GUI gui(window.ptr);
 	
-    while(!glfwWindowShouldClose(window)){
+    while(!window.shouldClose()){
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
 		renderer.Clear();
 		gui.NewFrame();
-		input::processInput(window, camera, deltaTime);
+		Input::processInput(window.ptr, camera, deltaTime);
 
 		glm::mat4 view = camera.GetViewMatrix();
 		mvp = proj*view*model;
@@ -53,8 +48,7 @@ int main(void){
 
 		gui.CameraWindowUpdate(camera);
 		gui.Render();
-      	glfwSwapBuffers(window);
-		glfwPollEvents();
+		window.Update();
     }
     return 0;
 }

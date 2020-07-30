@@ -1,9 +1,7 @@
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-#include "Camera.h"
+#include "Input.h"
+using namespace Input;
 
-namespace input{
-void processInput(GLFWwindow *window, Camera& camera, float deltaTime){
+void Input::processInput(GLFWwindow *window, Camera& camera, float deltaTime){
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
@@ -14,5 +12,4 @@ void processInput(GLFWwindow *window, Camera& camera, float deltaTime){
         camera.ProcessKeyboard(LEFT, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         camera.ProcessKeyboard(RIGHT, deltaTime);
-}
 }
