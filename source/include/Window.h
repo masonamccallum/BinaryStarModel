@@ -5,7 +5,7 @@ class Window{
     GLFWwindow* window;
 public:
     GLFWwindow* ptr;
-    Window(const int, const int);
+    Window(const int, const int, GLFWcursorposfun fncPtr);
     ~Window(){};
     bool shouldClose();
     void Update();

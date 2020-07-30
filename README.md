@@ -24,7 +24,8 @@ Presentation Recording
 - [ ] Develop Graphics engine for post processing
 
 ### Short Term Goals Summer
-- [ ] Fix flying Camera
+- [X] Fix flying Camera
+- [ ] Add mouse control for GUI interface 
 - [ ] Integrate Nbody with new engine
 - [ ] Save Simulation raw data
 - [ ] Import simulation from raw Data
