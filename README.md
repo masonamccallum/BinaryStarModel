@@ -22,3 +22,10 @@ Presentation Recording
 - [ ] Develop Particle Simulation saving protocol
 - [ ] Refactor code for a more powerful machine
 - [ ] Develop Graphics engine for post processing
+
+### Short term Goals Summer
+- [ ] Fix flying Camera
+- [ ] Save Simulation raw data
+- [ ] Import simulation from raw Data
+- [ ] Save sim to ffmpeg
+- [ ] Vamp UI for real time stats
