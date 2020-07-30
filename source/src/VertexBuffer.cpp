@@ -1,6 +1,7 @@
 #include "VertexBuffer.h"
 #include "Renderer.h"
 #include "Vertex.h"
+#include <iostream>
 
 VertexBuffer::VertexBuffer(unsigned int count){
     m_count = count;

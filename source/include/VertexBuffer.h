@@ -6,6 +6,7 @@ class VertexBuffer{
 		unsigned int m_count;
 	public:
 			VertexBuffer(unsigned int size);
+			VertexBuffer(){}
 			~VertexBuffer();
 
 			void Bind() const;

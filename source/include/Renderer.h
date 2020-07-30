@@ -3,11 +3,13 @@
 #include "IndexBuffer.h"
 #include "VertexArray.h"
 #include "Shader.h"
+#include "Grid.h"
 
 class Renderer{
 private:
 public:
 	void Clear() const;
 	void Draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader, const GLenum& TYPEOFDRAW) const;
+	void Draw(Grid&);
 };
 

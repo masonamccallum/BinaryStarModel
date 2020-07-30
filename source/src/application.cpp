@@ -9,6 +9,7 @@
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "VertexArray.h"
+#include "Grid.h"
 #include "../src/vendor/glm/glm.hpp"
 #include "../src/vendor/glm/gtc/matrix_transform.hpp"
 #include "../src/vendor/glm/gtx/string_cast.hpp"
@@ -26,8 +27,6 @@ float lastFrame = 0.0f;
 // window size
 extern const int width = 1600;
 extern const int height = 1000;
-static const int numRowCol = 30;
-static const float gridSquareSize = 5.0f;
 
 int main(void){
 	GLFWwindow* window;
@@ -44,55 +43,10 @@ int main(void){
 	glm::mat4 model = glm::mat4(1.0f);//glm::rotate(glm::mat4(1.0f), glm::radians(-100.0f), glm::vec3(1.0f,0.0f,0.0f));
 	glm::mat4 mvp = proj * view * model;
 		
-	//TODO Abstract this section out to draw grid
-	//===================================================================================================
-	float grid_verts[4*4*(numRowCol + 1)]; // WARNING: 4 hard codes the layout of each vertex
-	unsigned int grid_idx[4*(numRowCol+1)];
-	float pointOne[4];
-	float pointTwo[4];
-	float leftGrid = 0.0f;
-	float rightGrid = numRowCol * gridSquareSize; 
-	float bottomGrid = 0.0f;
-	float topGrid = numRowCol * gridSquareSize; 
-	
-	int idx = 0;
-	//Horizontal
-	for(int i=0; i < numRowCol + 1; i++){
-		pointOne[0] = leftGrid ; pointOne[1] = 0.0f; pointOne[2] = i*gridSquareSize; pointOne[3] = 1.0f;
-		pointTwo[0] = rightGrid; pointTwo[1] = 0.0f; pointTwo[2] = i*gridSquareSize; pointTwo[3] = 1.0f;
-		for(int k=0; k<4; k++)	{
-			grid_verts[idx*4+k] = pointOne[k];
-			grid_verts[(idx+1)*4+k] = pointTwo[k];
-		}
-		idx+=2;
-	}
-	//Vertical
-	for(int i=0; i < numRowCol + 1; i++){
-		pointOne[0] = i*gridSquareSize; pointOne[1] = 0.0f; pointOne[2] = bottomGrid; pointOne[3] = 1.0f;
-		pointTwo[0] = i*gridSquareSize; pointTwo[1] = 0.0f; pointTwo[2] = topGrid; pointTwo[3] = 1.0f;
-		for(int k=0; k<4; k++)	{
-			grid_verts[idx*4+k] = pointOne[k];
-			grid_verts[(idx+1)*4+k] = pointTwo[k];
-		}
-		idx+=2;
-	}
-
-	for(unsigned int i=0; i<4*(numRowCol+1); i++){
-		grid_idx[i] = i;
-	}
-	//===================================================================================================
-
-	VertexArray grid_va;
-	VertexBuffer grid_vb(4*(numRowCol+1));
-	VertexBufferLayout grid_layout;
-	grid_layout.Push<float>(4);
-	grid_va.AddBuffer(grid_vb, grid_layout);
-	IndexBuffer grid_ib(grid_idx, 4*(numRowCol+1));
-	Shader grid_shader("../res/shaders/grid.shader");
-	grid_shader.Bind();
-	grid_shader.SetUniformMat4f("u_MVP", mvp);
-
 	Renderer renderer;	
+	
+	Grid grid(5.0f, mvp);
+
 	ImGui::CreateContext();
 	ImGui::StyleColorsDark();
 	ImGui_ImplGlfw_InitForOpenGL(window, true);
@@ -113,13 +67,12 @@ int main(void){
 		ImGui::NewFrame();
 		processInput(window);
 
-		grid_shader.Bind();
 		glm::mat4 view = camera.GetViewMatrix();
 		mvp = proj*view*model;
-		grid_shader.SetUniformMat4f("u_MVP", mvp);
 
-		grid_vb.Update(grid_verts);
-		renderer.Draw(grid_va,grid_ib, grid_shader, GL_LINES);
+		grid.Update(mvp);	
+		renderer.Draw(grid);
+
 
 		if (show_demo_window)
             ImGui::ShowDemoWindow(&show_demo_window);
