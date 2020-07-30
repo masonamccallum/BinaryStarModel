@@ -31,15 +31,11 @@ Presentation Recording
 - [ ] Save sim to ffmpeg
 - [ ] Vamp UI for real time stats
 
-### Build Instructions
-Dependencies: CUDA v10 minimum and CMAKE
-
-'''bash
-git clone https://github.com/masonamccallum/BinaryStarModel.git
-cd BinaryStarModel/source
-mkdir build
-cd build
-cmake ..
-make
-./StarStuff
-'''
+### Build Instructions  (Dependencies: CUDA v10 minimum and CMAKE)
+    git clone https://github.com/masonamccallum/BinaryStarModel.git
+    cd BinaryStarModel/source
+    mkdir build
+    cd build
+    cmake ..
+    make
+    ./StarStuff
