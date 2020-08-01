@@ -24,8 +24,8 @@ public:
     
     void Bind(){
         shader_ptr->Bind();
-        ib->Bind(); 
         va.Bind();
+        ib->Bind(); 
     }
 
     int getIBCount(){return ib->GetCount();} 

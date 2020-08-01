@@ -4,7 +4,7 @@
 
 VertexArray::VertexArray(){
 	glGenVertexArrays(1,&m_RendererID);
-	std::cout << "Creating Vertex Array: " << m_RendererID << std::endl;
+	//std::cout << "Creating Vertex Array: " << m_RendererID << std::endl;
 }
 
 VertexArray::~VertexArray(){
@@ -25,7 +25,7 @@ void VertexArray::AddBuffer(const VertexBuffer& vb, const VertexBufferLayout& la
 }
 
 void VertexArray::Bind() const{
-	std::cout << "Binding Vertex Array: " << m_RendererID << std::endl;
+	//std::cout << "Binding Vertex Array: " << m_RendererID << std::endl;
 	glBindVertexArray(m_RendererID);
 }
 

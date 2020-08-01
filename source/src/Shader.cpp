@@ -75,7 +75,7 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 }
 
 void Shader::Bind() const{
-  std::cout << "Binding Shader: " << m_RendererID << std::endl;
+  //std::cout << "Binding Shader: " << m_RendererID << std::endl;
 	glUseProgram(m_RendererID);
 }
 
@@ -84,7 +84,7 @@ void Shader::Unbind() const{
 }
 
 void Shader::SetUniformMat4f(const std::string& name, const glm::mat4& matrix){
-  std::cout << "set uniform" << std::endl;
+  //std::cout << "set uniform" << std::endl;
 	glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, &matrix[0][0]);
 }
 
@@ -98,7 +98,7 @@ unsigned int Shader::GetUniformLocation(const std::string& name){
 
 	int location = glGetUniformLocation(m_RendererID, name.c_str());
 	if (location == -1)
-		std::cout << "Uniform " << name << " doesnt exist" << std::endl;
+		//std::cout << "Uniform " << name << " doesnt exist" << std::endl;
 	m_UniformLocationCache[name] = location;
 	return location;
 }

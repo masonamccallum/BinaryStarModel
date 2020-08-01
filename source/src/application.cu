@@ -210,37 +210,41 @@ int main(void){
 	//          CUDA INTEROP                        //
 	//////////////////////////////////////////////////	
 	VertexArray va;
-	unsigned int index[N];
-	float particles[N*4];
-	float pointOne[4], pointTwo[4];
-	int idx = 0; 
-	for(int i=0; i < N/2; i++){
-		pointOne[0] = 10.0f; pointOne[1] = i*6.0f; pointOne[2] = i*1.0f; pointOne[3] = 0.0f;
-		pointTwo[0] = 0.0f; pointTwo[1] = i*2.0f; pointTwo[2] = 0.0f; pointTwo[3] = 0.0f;
-		for(int k=0; k<4; k++)	{
-        	particles[idx*4+k] = pointOne[k];
-			particles[(idx+1)*4+k] = pointTwo[k];
-		}
-		idx+=2;
-	}
+	//float particles[N*4];
+	//unsigned int index[N];
+
+	//for(unsigned int i = 0; i < N; i++){
+	//	index[i] = i;
+	//}
+
+	//for(int i = 0; i < 10; i++){
+	//	for(int j = 0; j < 10; j++){
+	//		for(int k = 0; k < 10; k++){
+	//		}
+	//	}
+	//}
+	
+	float particles[16] = {
+		0.0f,0.0f,0.0f,1.0f,
+		10.0f,10.0f,10.0f,1.0f,
+		10.0f,0.0f,100.0f,1.0f,
+		0.0f,10.0f,0.0f,1.0f,
+	};
+	
+	unsigned int index[4] = {
+		0,1,2,3		
+	};
 
 	//for(int i=0; i < 20; i+=4){
 	//	std::cout << "(" <<particles[i+0]<< "," <<particles[i+1]<< "," <<particles[i+2] << "," <<particles[i+3] << ")" << std::endl;
 	//}
 	
-	
-	for(unsigned int i = 0; i < N; i++){
-		index[i] = i;
-	}
-	
-	VertexBuffer vb(N);
+	VertexBuffer vb(4);
 	VertexBufferLayout layout;		
 	layout.Push<float>(4);
 	va.AddBuffer(vb, layout);
-	IndexBuffer ib(index, N);
+	IndexBuffer ib(index, 4);//1000);
 	Shader shader("../res/shaders/particle.shader");
-	shader.Bind();
-	shader.SetUniformMat4f("u_MVP", mvp);
 	
 	//cudaGraphicsResource * resourceA;
 	//VertexBuffer vb(100, true);
@@ -257,12 +261,9 @@ int main(void){
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
-		
 		renderer.Clear();
-
-		
 		gui.NewFrame();
-		//Input::processInput(window.ptr, camera, deltaTime);
+		Input::processInput(window.ptr, camera, deltaTime);
 
 		glm::mat4 view = camera.GetViewMatrix();
 		mvp = proj*view*model;
@@ -272,7 +273,9 @@ int main(void){
 		//            CUDA INTEROP               //
 		///////////////////////////////////////////
 		
+
 		shader.Bind();
+		ib.Bind();
 		shader.SetUniformMat4f("u_MVP", mvp);
 		vb.Update(particles);
 		renderer.Draw(va,ib,shader, GL_POINTS);

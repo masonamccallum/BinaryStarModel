@@ -6,7 +6,7 @@
 VertexBuffer::VertexBuffer(unsigned int count){
     m_count = count;
     glGenBuffers(1, &m_RendererID);
-    std::cout << "Vertex buffer creation: " <<  m_RendererID << std::endl;
+    //std::cout << "Vertex buffer creation: " <<  m_RendererID << std::endl;
     glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
     glBufferData(GL_ARRAY_BUFFER, sizeof(float)* 4 * count, nullptr, GL_DYNAMIC_DRAW);
 }
