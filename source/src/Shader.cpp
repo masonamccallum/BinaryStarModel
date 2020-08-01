@@ -9,6 +9,7 @@
 Shader::Shader(const std::string& filepath):m_Filepath(filepath), m_RendererID(0){
 	ShaderProgramSource source = ParseShader(filepath);
 	m_RendererID = CreateShader(source.VertexSource, source.FragmentSource);
+  //std::cout << "Creating Shader: " <<  m_RendererID << std::endl;
 }
 
 Shader::~Shader(){
@@ -74,6 +75,7 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 }
 
 void Shader::Bind() const{
+  std::cout << "Binding Shader: " << m_RendererID << std::endl;
 	glUseProgram(m_RendererID);
 }
 
@@ -82,6 +84,7 @@ void Shader::Unbind() const{
 }
 
 void Shader::SetUniformMat4f(const std::string& name, const glm::mat4& matrix){
+  std::cout << "set uniform" << std::endl;
 	glUniformMatrix4fv(GetUniformLocation(name), 1, GL_FALSE, &matrix[0][0]);
 }
 

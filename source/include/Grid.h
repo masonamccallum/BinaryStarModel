@@ -27,7 +27,7 @@ public:
         ib->Bind(); 
         va.Bind();
     }
-    
+
     int getIBCount(){return ib->GetCount();} 
     
     void Update(glm::mat4& mvp){
