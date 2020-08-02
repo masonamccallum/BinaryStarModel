@@ -3,7 +3,7 @@
 #include "Vertex.h"
 #include <iostream>
 
-VertexBuffer::VertexBuffer(unsigned int count){
+VertexBuffer::VertexBuffer(unsigned int count, bool gpuInterop){
     m_count = count;
     glGenBuffers(1, &m_RendererID);
     //std::cout << "Vertex buffer creation: " <<  m_RendererID << std::endl;

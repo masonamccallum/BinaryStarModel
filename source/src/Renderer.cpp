@@ -10,7 +10,7 @@ void Renderer::Draw(const VertexArray& va, const IndexBuffer& ib, const Shader& 
 	va.Bind();
 	ib.Bind();
 	if(TYPEOFDRAW == GL_POINTS){
-		glPointSize(10.0f);
+		glPointSize(3.0f);
 	}else if(TYPEOFDRAW == GL_LINE){
 		glLineWidth(3.0f);
 	}

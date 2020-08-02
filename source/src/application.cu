@@ -2,6 +2,8 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <cuda.h>
+#include <cuda_runtime.h>
+#include <cuda_gl_interop.h>
 #include "graphicsIncludes.h"
 #include "vendorIncludes.h"
 #include "Renderer.h"
@@ -16,7 +18,7 @@
 #define BLOCK 256
 #define DT 0.005
 #define G 1.0
-#define STOP_TIME 1.0
+#define STOP_TIME 5.0
 #define DAMP 1.0
 #define H 1.0
 
@@ -27,7 +29,7 @@ float3 * v_GPU,* f_GPU;
 dim3 block; 
 dim3 gridCUDA;
 
-
+/*
 void set_initail_conditions(){
 	int i,j,k,num,particles_per_side;
     float position_start, temp;
@@ -141,8 +143,14 @@ __global__ void moveBodies(float4* pos, float3* vel, float3* force)
 	    pos[id].y += vel[id].y*DT;
 	    pos[id].z += vel[id].z*DT;
 }
+*/
+__global__ void move(float4* particles){
+	int id = threadIdx.x + blockDim.x*blockIdx.x;
+		particles[id].x += 0.10f;
+		particles[id].y += 0.01f;
+		particles[id].z += 0.0f;
+}
 
-void mouse_callback(GLFWwindow*, double, double);
 // camera
 Camera camera(glm::vec3(70.0f, 30.0f, 260.0f));
 // timing
@@ -154,9 +162,25 @@ float lastX = width/2.0f;
 float lastY = height/2.0f;
 bool firstMouse= true;
 
+void mouse_callback(GLFWwindow* window, double xpos, double ypos){
+    if (firstMouse){
+        lastX = xpos;
+        lastY = ypos;
+        firstMouse = false;
+    }
+
+    float xoffset = xpos - lastX;
+    float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
+    lastX = xpos;
+    lastY = ypos;
+
+    camera.ProcessMouseMovement(xoffset, yoffset);
+}
+
 
 int main(void){
 
+	/*
 {
 	float dt;
 	float time = 0.0;
@@ -193,6 +217,7 @@ int main(void){
 	cudaEventElapsedTime(&elapsedTime, start, stop);
 	printf("\n\nGPU time = %3.1f milliseconds\n", elapsedTime);
 }
+*/
 	Window window(width, height, mouse_callback);
 
 	glm::mat4 proj;
@@ -203,59 +228,40 @@ int main(void){
 	Renderer renderer;	
 	Grid grid(5.0f, mvp);
 	GUI gui(window.ptr);
-	set_initail_conditions();
+	//set_initail_conditions();
 
 	
 	//////////////////////////////////////////////////	
 	//          CUDA INTEROP                        //
 	//////////////////////////////////////////////////	
+	float particles_CPU[N*4];
+	unsigned int index[N];
+
+	for(unsigned int i = 0; i < N; i++){
+		index[i] = i;
+	}
+	
+	float point[4];
+	int idx = 0;
+	for(int i = 0; i < 10; i++){
+		for(int j = 0; j < 10; j++){
+			for(int k = 0; k < 10; k++){
+				point[0] = i; point[1] = j; point[2] = k; point[3] = 1.0f;
+				for(int m =0; m < 4; m++){
+					particles_CPU[idx*4 + m] = point[m];
+				}
+				idx++;
+			}
+		}
+	}
+	
 	VertexArray va;
-	//float particles[N*4];
-	//unsigned int index[N];
-
-	//for(unsigned int i = 0; i < N; i++){
-	//	index[i] = i;
-	//}
-
-	//for(int i = 0; i < 10; i++){
-	//	for(int j = 0; j < 10; j++){
-	//		for(int k = 0; k < 10; k++){
-	//		}
-	//	}
-	//}
-	
-	float particles[16] = {
-		0.0f,0.0f,0.0f,1.0f,
-		10.0f,10.0f,10.0f,1.0f,
-		10.0f,0.0f,100.0f,1.0f,
-		0.0f,10.0f,0.0f,1.0f,
-	};
-	
-	unsigned int index[4] = {
-		0,1,2,3		
-	};
-
-	//for(int i=0; i < 20; i+=4){
-	//	std::cout << "(" <<particles[i+0]<< "," <<particles[i+1]<< "," <<particles[i+2] << "," <<particles[i+3] << ")" << std::endl;
-	//}
-	
-	VertexBuffer vb(4);
+	VertexBuffer vb(1024);
 	VertexBufferLayout layout;		
 	layout.Push<float>(4);
 	va.AddBuffer(vb, layout);
-	IndexBuffer ib(index, 4);//1000);
+	IndexBuffer ib(index, 1000);
 	Shader shader("../res/shaders/particle.shader");
-	
-	//cudaGraphicsResource * resourceA;
-	//VertexBuffer vb(100, true);
-	//cudaSetDevice(cutGetMaxGflopsDeviceId());
-	//cudaGLSetGLDevice(cutGetMaxGflopsDeviceId());
-	//cudaGraphicsGLRegisterBuffer(...);
-	//cudaStream_t cuda_Stream;
-	//cudaStreamCreate(&cuda_Stream);
-	//cudaGraphicsMapResources(1, resource, cuda_Stream);
-	//cudaGraphicsUnmapResources(1, resource, cuda_Stream);
-	//cudaStreamDestroy(cuda_Stream);
 	
     while(!window.shouldClose()){
         float currentFrame = glfwGetTime();
@@ -267,21 +273,19 @@ int main(void){
 
 		glm::mat4 view = camera.GetViewMatrix();
 		mvp = proj*view*model;
-		//mvp = glm::mat4(1.0f);
-		
-		///////////////////////////////////////////
-		//            CUDA INTEROP               //
-		///////////////////////////////////////////
-		
 
-		shader.Bind();
+		float4* posGPU;
+		cudaMalloc((void**)&posGPU, 1024*sizeof(float4));
+		cudaMemcpy(posGPU, particles_CPU, 1024*sizeof(float4), cudaMemcpyHostToDevice);
+		move<<<1024,1>>>(posGPU);
+		cudaMemcpy(particles_CPU, posGPU, 1024*sizeof(float4), cudaMemcpyDeviceToHost);
+
+		vb.Update(particles_CPU);
 		ib.Bind();
+		shader.Bind();
 		shader.SetUniformMat4f("u_MVP", mvp);
-		vb.Update(particles);
-		renderer.Draw(va,ib,shader, GL_POINTS);
-		///////////////////////////////////////////
+		renderer.Draw(va,ib,shader,GL_POINTS);
 		
-
 		grid.Update(mvp);	
 		renderer.Draw(grid);
 
@@ -290,19 +294,4 @@ int main(void){
 		window.Update();
     }
     return 0;
-}
-
-void mouse_callback(GLFWwindow* window, double xpos, double ypos){
-    if (firstMouse){
-        lastX = xpos;
-        lastY = ypos;
-        firstMouse = false;
-    }
-
-    float xoffset = xpos - lastX;
-    float yoffset = lastY - ypos; // reversed since y-coordinates go from bottom to top
-    lastX = xpos;
-    lastY = ypos;
-
-    camera.ProcessMouseMovement(xoffset, yoffset);
 }
