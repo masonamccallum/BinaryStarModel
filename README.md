@@ -26,7 +26,7 @@ Presentation Recording
 ### Short Term Goals Summer
 - [X] Fix flying Camera
 - [ ] Add mouse control for GUI interface 
-- [ ] Integrate Nbody with new engine
+- [X] Integrate Nbody with new engine
 - [ ] Save Simulation raw data
 - [ ] Import simulation from raw Data
 - [ ] Save sim to ffmpeg

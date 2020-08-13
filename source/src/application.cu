@@ -15,12 +15,13 @@
 #include "Window.h"
 
 //CUDA
-#define N 1024 
-#define BLOCK 256
-#define DT 0.0005
-#define G 1.0
-#define DAMP 1.0
-#define H 0.00001
+const int N = 2048;
+const int BLOCK = 256;
+const float DT = 0.005;
+const float G = 1.0;
+const float DAMP = 1.0;
+const float H = 1.0f;
+dim3 cudaBlock, cudaGrid;
 
 __device__ float3 getBodyBodyForce(float4 p0, float4 p1)
 {
@@ -117,8 +118,15 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos){
 
 
 int main(void){
+	cudaBlock.x = BLOCK;
+	cudaBlock.y = 1;
+	cudaBlock.z = 1;
+	
+	cudaGrid.x = (N-1)/cudaBlock.x + 1;
+	cudaGrid.y = 1;
+	cudaGrid.z = 1;
+	
 	Window window(width, height, mouse_callback);
-
 	glm::mat4 proj;
 	proj = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 400.0f);
 	glm::mat4 view = camera.GetViewMatrix();
@@ -133,20 +141,22 @@ int main(void){
 	//////////////////////////////////////////////////	
 	//          CUDA INTEROP                        //
 	//////////////////////////////////////////////////	
-	float particles_CPU[N*4];
-	
 	unsigned int index[N];
-
 	for(unsigned int i = 0; i < N; i++){
 		index[i] = i;
 	}
 	
+	float particles_CPU[N*4];
+	int cubeRootN = (int)(pow((float)N, 1.0/3.0) + 0.999999);
+	float seperation = 1.0;
+	
 	float point[4];
 	int idx = 0;
-	for(int i = 0; i < 10; i++){
-		for(int j = 0; j < 10; j++){
-			for(int k = 0; k < 10; k++){
-				point[0] = i * 10; point[1] = j * 10; point[2] = k * 10; point[3] = 1.0f;
+	for(int i = 0; i < cubeRootN; i++){
+		for(int j = 0; j < cubeRootN; j++){
+			for(int k = 0; k < cubeRootN; k++){
+				if(N <= idx) break;
+				point[0] = i * seperation; point[1] = j * seperation; point[2] = k * seperation; point[3] = 1.0f;
 				for(int m =0; m < 4; m++){
 					particles_CPU[idx*4 + m] = point[m];
 				}
@@ -156,40 +166,39 @@ int main(void){
 	}
 	
 	VertexArray va;
-	VertexBuffer vb(1024);
+	VertexBuffer vb(N);
 	VertexBufferLayout layout;		
 	layout.Push<float>(4);
 	va.AddBuffer(vb, layout);
-	IndexBuffer ib(index, 1000);
+	IndexBuffer ib(index, N);
 	Shader shader("../res/shaders/particle.shader");
 	
 	float vel_CPU[N*3] = {0};
 	float force_CPU[N*3] = {0};
 	float4* posGPU;
 	float3 *velGPU, *forceGPU;
-	cudaMalloc((void**)&posGPU, 1024*sizeof(float4));
-	cudaMalloc((void**)&velGPU, 1024*sizeof(float3));
-	cudaMalloc((void**)&forceGPU, 1024*sizeof(float3));
-	cudaMemcpy(forceGPU, force_CPU, 1024*sizeof(float3), cudaMemcpyHostToDevice);
-	cudaMemcpy(velGPU,vel_CPU, 1024*sizeof(float3), cudaMemcpyHostToDevice);
-	
+	cudaMalloc((void**)&posGPU, N*sizeof(float4));
+	cudaMalloc((void**)&velGPU, N*sizeof(float3));
+	cudaMalloc((void**)&forceGPU, N*sizeof(float3));
+	cudaMemcpy(forceGPU, force_CPU, N*sizeof(float3), cudaMemcpyHostToDevice);
+	cudaMemcpy(velGPU,vel_CPU, N*sizeof(float3), cudaMemcpyHostToDevice);
     while(!window.shouldClose()){
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
-		renderer.Clear();
 		gui.NewFrame();
 		Input::processInput(window.ptr, camera, deltaTime);
 
 		glm::mat4 view = camera.GetViewMatrix();
 		mvp = proj*view*model;
 
-		
-		cudaMemcpy(posGPU, particles_CPU, 1024*sizeof(float4), cudaMemcpyHostToDevice);
-		getForces<<<1024, 1>>>(posGPU, velGPU, forceGPU);
-		moveBodies<<<1024, 1>>>(posGPU, velGPU, forceGPU);
-		cudaMemcpy(particles_CPU, posGPU, 1024*sizeof(float4), cudaMemcpyDeviceToHost);
+		cudaMemcpy(posGPU, particles_CPU, N*sizeof(float4), cudaMemcpyHostToDevice);
+		getForces<<<cudaBlock, cudaGrid>>>(posGPU, velGPU, forceGPU);
+		moveBodies<<<cudaBlock, cudaGrid>>>(posGPU, velGPU, forceGPU);
+		cudaMemcpy(particles_CPU, posGPU, N*sizeof(float4), cudaMemcpyDeviceToHost);
+		cudaMemcpy(vel_CPU, velGPU, N*sizeof(float3), cudaMemcpyDeviceToHost);
 
+		renderer.Clear();
 		vb.Update(particles_CPU);
 		ib.Bind();
 		shader.Bind();
