@@ -27,3 +27,10 @@ void VertexBuffer::Update(float * verticies) const{
     Bind();
     glBufferSubData(GL_ARRAY_BUFFER, 0, m_count*4*sizeof(float), verticies); //Warning 4 is hardcode for testing needs fixing
 }
+
+void VertexBuffer::Update(float * verticies, float * velocity) const{
+    Bind();
+    glBufferSubData(GL_ARRAY_BUFFER, 0, m_count*4*sizeof(float), verticies); //Warning 4 is hardcode for testing needs fixing
+    glBufferSubData(GL_ARRAY_BUFFER, 1, m_count*4*sizeof(float), velocity); //Warning 4 is hardcode for testing needs fixing
+}
+

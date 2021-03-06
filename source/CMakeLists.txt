@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.12)
-project(StarStuff VERSION 1.0.0 LANGUAGES CXX CUDA)
+project(StarStuff VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -25,7 +25,7 @@ add_subdirectory( src/vendor/glm )
 include_directories($(GLEW_INCLUDE_DIRS))
 link_libraries(${GLEW_LIBRARIES})
 
-file(GLOB SOURCES "src/*.cpp" "src/*.cu")
+file(GLOB SOURCES "src/*.cpp")
 add_executable(StarStuff ${SOURCES} ${imguiFILES})
 target_link_libraries(StarStuff OpenGL::GL)
 target_link_libraries(StarStuff glfw)
