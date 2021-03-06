@@ -19,16 +19,16 @@ Presentation Recording
 
 ### Moving forward
 - [X] Develop multi-GPU Simulation
-- [ ] Develop Particle Simulation saving protocol
-- [ ] Refactor code for a more powerful machine
-- [ ] Develop Graphics engine for post processing
+- [X] Develop Particle Simulation saving protocol
+- [X] Refactor code for a more powerful machine
+- [X] Develop Graphics engine for post processing
 
 ### Short Term Goals Summer
 - [X] Fix flying Camera
-- [ ] Add mouse control for GUI interface 
+- [X] Add mouse control for GUI interface 
 - [X] Integrate Nbody with new engine
-- [ ] Save Simulation raw data
-- [ ] Import simulation from raw Data
+- [X] Save Simulation raw data
+- [X] Import simulation from raw Data
 - [ ] Save sim to ffmpeg
 - [ ] Vamp UI for real time stats
 
