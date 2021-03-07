@@ -29,6 +29,7 @@ Presentation Recording
 - [X] Integrate Nbody with new engine
 - [X] Save Simulation raw data
 - [X] Import simulation from raw Data
+- [ ] Plot particles as sheres
 - [ ] Abstract particle plotting into its own class
 - [ ] Improve simulation control input abstraction
 - [ ] Save sim to ffmpeg
