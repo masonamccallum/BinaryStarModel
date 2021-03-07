@@ -23,12 +23,14 @@ Presentation Recording
 - [X] Refactor code for a more powerful machine
 - [X] Develop Graphics engine for post processing
 
-### Short Term Goals Summer
+### Short Term Goals
 - [X] Fix flying Camera
 - [X] Add mouse control for GUI interface 
 - [X] Integrate Nbody with new engine
 - [X] Save Simulation raw data
 - [X] Import simulation from raw Data
+- [ ] Abstract particle plotting into its own class
+- [ ] Improve simulation control input abstraction
 - [ ] Save sim to ffmpeg
 - [ ] Vamp UI for real time stats
 
