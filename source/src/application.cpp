@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <math.h>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -11,12 +12,12 @@
 #include "Input.h"
 #include "GUI.h"
 #include "Window.h"
-
+using namespace std;
 const int N = pow(2.0,14.0);
+
 
 // camera
 Camera camera(glm::vec3(70.0f, 30.0f, 260.0f));
-// timing
 float deltaTime = 0.0f;	
 float lastFrame = 0.0f;
 const int width = 1600;
@@ -24,6 +25,7 @@ const int height = 1000;
 float lastX = width/2.0f;
 float lastY = height/2.0f;
 bool firstMouse= true;
+int seekStride = 5; //UNIT: frames
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos){
     if (firstMouse){
@@ -43,13 +45,13 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos){
 int main(void){
 	Window window(width, height, mouse_callback);
 	glm::mat4 proj;
-	proj = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 400.0f);
+	proj = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 1000.0f);
 	glm::mat4 view = camera.GetViewMatrix();
 	glm::mat4 model = glm::mat4(1.0f);
 	glm::mat4 mvp = proj * view * model;
 	Renderer renderer;	
 	//Grid grid(5.0f, mvp);
-	GUI gui(window.ptr);
+	//GUI gui(window.ptr);
 	
 	unsigned int index[N];
 	for(unsigned int i = 0; i < N; i++){
@@ -72,37 +74,81 @@ int main(void){
 	float vel_CPU[N*3] = {0};
 	float force_CPU[N*3] = {0};
 
-	FILE *posFile = fopen("../res/PosAndVel", "rb");
+	ifstream posfile("../res/PosAndVel", ios::in|ios::binary|ios::ate);
+	posfile.seekg(0, ios::beg);
+	
+
+	//cout << "size:" << size << endl;
 	float fileTime;
+	int should_accept_counter = 0;
+	bool Pause = false;
+	bool shouldAccept;
     
-	while(!window.shouldClose()){
+	while(!window.shouldClose() && posfile.is_open()){
     float currentFrame = glfwGetTime();
     deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
-		gui.NewFrame();
+		//gui.NewFrame();
 		Input::processInput(window.ptr, camera, deltaTime);
 
 		glm::mat4 view = camera.GetViewMatrix();
 		mvp = proj*view*model;
 
-		fread(&fileTime, sizeof(float), 1, posFile);
-		fread(particles_CPU, sizeof(float)*4,N,posFile);
+		//Temporary effort to prevent multiple push registers whith button require tiny latency
+		{
+			shouldAccept = (should_accept_counter > 5) ? true:false;
+			should_accept_counter++;
+			if(should_accept_counter > 100){
+				should_accept_counter = 5;
+			}
+		}
+
+		if (glfwGetKey(window.ptr, GLFW_KEY_LEFT) == GLFW_PRESS && shouldAccept){
+			posfile.seekg(-seekStride*(sizeof(float)+2*sizeof(float)*4*N), ios::cur);
+			should_accept_counter = 0;
+			Pause = true;
+		}
+
+		if (glfwGetKey(window.ptr, GLFW_KEY_RIGHT) == GLFW_PRESS && shouldAccept){
+			posfile.seekg(seekStride*(sizeof(float)+2*sizeof(float)*4*N), ios::cur);
+			should_accept_counter = 0;
+			Pause = true;
+		}
+
+		if (glfwGetKey(window.ptr, GLFW_KEY_SPACE) == GLFW_PRESS && shouldAccept){
+			Pause = (Pause == true) ? false:true ;
+			should_accept_counter = 0;
+		}
+
+		if(!posfile.eof() && !Pause){
+			posfile.read(reinterpret_cast<char*>(&fileTime), sizeof(float));
+			posfile.read(reinterpret_cast<char*>(particles_CPU), sizeof(float)*4*N);
+			posfile.read(reinterpret_cast<char*>(velocity_CPU), sizeof(float)*4*N);
+		}else if(!posfile.eof() && Pause){
+			posfile.read(reinterpret_cast<char*>(&fileTime), sizeof(float));
+			posfile.read(reinterpret_cast<char*>(particles_CPU), sizeof(float)*4*N);
+			posfile.read(reinterpret_cast<char*>(velocity_CPU), sizeof(float)*4*N);
+			posfile.seekg(-(sizeof(float)+2*sizeof(float)*4*N), ios::cur);
+		}else{
+			posfile.clear();
+			posfile.seekg(0, ios::beg);
+		}
+
+		vb.Update(particles_CPU, velocity_CPU);
 
 		renderer.Clear();
-		vb.Update(particles_CPU, velocity_CPU);
 		ib.Bind();
 		shader.Bind();
 		shader.SetUniformMat4f("u_MVP", mvp);
 		renderer.Draw(va,ib,shader,GL_POINTS);
 
-		fread(velocity_CPU, sizeof(float)*4, N, posFile);
-		
 		//grid.Update(mvp);	
 		//renderer.Draw(grid);
-
-		gui.CameraWindowUpdate(camera);
-		gui.Render();
+		//gui.CameraWindowUpdate(camera);
+		//gui.Render();
+		
 		window.Update();
     }
+		posfile.close();
     return 0;
 }

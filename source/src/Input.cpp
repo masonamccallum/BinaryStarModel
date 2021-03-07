@@ -12,4 +12,10 @@ void Input::processInput(GLFWwindow *window, Camera& camera, float deltaTime){
         camera.ProcessKeyboard(LEFT, deltaTime);
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         camera.ProcessKeyboard(RIGHT, deltaTime);
+		if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
+				int m = 2; //update
+		if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
+				int m = 3;
+		if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+				int m = 3;
 }
