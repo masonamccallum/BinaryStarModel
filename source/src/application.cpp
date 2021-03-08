@@ -94,8 +94,6 @@ int main(void){
 		glm::mat4 view = camera.GetViewMatrix();
 		mvp = proj*view*model;
 
-		//Temporary effort to prevent multiple push registers whith button require tiny latency
-		//THIS ALSO NEEDS TO BE PLACED INTO THE INPUT ABSTRACTION
 		{
 			shouldAccept = (should_accept_counter > 5) ? true:false;
 			should_accept_counter++;
@@ -104,7 +102,6 @@ int main(void){
 			}
 		}
 
-		//TODO: THIS INPUT HANDELING NEEDS TO BE PLACES ELSEWHERE. THIS IS NOT GOOD.
 		if (glfwGetKey(window.ptr, GLFW_KEY_LEFT) == GLFW_PRESS && shouldAccept){  
 			posfile.seekg(-seekStride*(sizeof(float)+2*sizeof(float)*4*N), ios::cur);
 			should_accept_counter = 0;
@@ -122,7 +119,6 @@ int main(void){
 			should_accept_counter = 0;
 		}
 
-		//NEEDS TO BE ABSTRACTED: Class identical to Grid
 		if(!posfile.eof() && !Pause){
 			posfile.read(reinterpret_cast<char*>(&fileTime), sizeof(float));
 			posfile.read(reinterpret_cast<char*>(particles_CPU), sizeof(float)*4*N);
