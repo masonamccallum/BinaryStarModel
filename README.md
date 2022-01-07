@@ -38,7 +38,8 @@ Presentation Recording
 - [ ] Vamp UI for real time stats
 
 ### View Graphics Output
-[![Presentation](/images/thumbnail.jpg)](https://youtu.be/9sAZqLs8Gg8 "Presentation Recording - Click to Watch!")
+[![Presentation](https://img.youtube.com/vi/9sAZqLs8Gg8/0.jpg)](https://youtu.be/9sAZqLs8Gg8 "Presentation Recording - Click to Watch!")
+
 
 ### Build Instructions  (Dependencies: CUDA v10 minimum and CMAKE)
     git clone https://github.com/masonamccallum/BinaryStarModel.git
