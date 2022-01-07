@@ -17,6 +17,8 @@ of a prevalent type of star system.
 [![Presentation](/images/thumbnail.jpg)](https://youtu.be/CefOApx5AQI "Presentation Recording - Click to Watch!")
 Presentation Recording
 
+
+
 ### Moving forward
 - [X] Develop multi-GPU Simulation
 - [X] Develop Particle Simulation saving protocol
@@ -36,7 +38,7 @@ Presentation Recording
 - [ ] Vamp UI for real time stats
 
 ### View Graphics Output
-https://user-images.githubusercontent.com/33843826/148618441-a13e0e23-aca1-45a7-828e-5d9a13c08888.mp4
+[![Presentation](/images/thumbnail.jpg)](https://youtu.be/9sAZqLs8Gg8 "Presentation Recording - Click to Watch!")
 
 ### Build Instructions  (Dependencies: CUDA v10 minimum and CMAKE)
     git clone https://github.com/masonamccallum/BinaryStarModel.git
